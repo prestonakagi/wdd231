@@ -72,7 +72,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -85,7 +85,7 @@ const courses = [
             'HTML',
             'CSS'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -97,7 +97,7 @@ const courses = [
         technology: [
             'Python'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -109,7 +109,7 @@ const courses = [
         technology: [
             'C#'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -123,7 +123,7 @@ const courses = [
             'CSS',
             'JavaScript'
         ],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -141,21 +141,114 @@ const courses = [
     }
 ]
 
-// array with number of subjects in courses
-const numberOfSubjects = courses.length;
-const coursesIndexes = [];
-for (let i = 0; i < length; i++) {
-    coursesIndexes.push(i);
-}
+// make list elements for completed course work
+
+// // array with number of subjects in courses
+// const numberOfSubjects = courses.length;
+// const coursesIndexes = [];
+// for (let i = 0; i < length; i++) {
+//     coursesIndexes.push(i);
+// }
+
 
 // display all courses
 const certificateDiv = document.querySelector('.classes-grid');
 courses.forEach(course => {
     const certChild = document.createElement("p");
-    certChild.innerText = `${course.subject} ${course.number}`;
-    certificateDiv.appendChild(certChild);
+    if (course.completed) {
+        certChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        certificateDiv.appendChild(certChild);
+    } else {
+        certChild.innerText = `${course.subject} ${course.number}`;
+        certificateDiv.appendChild(certChild);
+    }
+    
+  // show total number of credits of filtered courses
+  const creditsElement = document.getElementById('credits');
+  const creditCount = courses.reduce((accumulator, course) => { 
+    return accumulator + course.credits;
+   }, 0);
+   
+  creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
 });
 
 // display filtered courses for WDD courses and CSE courses
 // using buttons that listen for the click event.
+
+// DOM event click response effect on nav menu options.
+
+const allLink = document.getElementById('all-courses');
+allLink.addEventListener('click', () => {
+  while (certificateDiv.firstChild) {
+    certificateDiv.removeChild(certificateDiv.firstChild);
+    }
+  courses.forEach(course => {
+    const allChild = document.createElement("p");
+    if (course.completed) {
+        allChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        certificateDiv.appendChild(allChild);
+    } else {
+        allChild.innerText = `${course.subject} ${course.number}`;
+        certificateDiv.appendChild(allChild);
+    }
+  });
+  // show total number of credits of filtered courses
+  const creditsElement = document.getElementById('credits');
+  const creditCount = courses.reduce((accumulator, course) => { 
+    return accumulator + course.credits;
+   }, 0);
+   
+  creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
+});
+
+const wddFilteredCourses = courses.filter((course) => course.subject == 'WDD');
+const wddLink = document.getElementById('wdd-courses');
+wddLink.addEventListener('click', () => {
+  while (certificateDiv.firstChild) {
+    certificateDiv.removeChild(certificateDiv.firstChild);
+    }
+  wddFilteredCourses.forEach(course => {
+    const wddChild = document.createElement("p");
+    if (course.completed) {
+        wddChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        certificateDiv.appendChild(wddChild);
+    } else {
+        wddChild.innerText = `${course.subject} ${course.number}`;
+        certificateDiv.appendChild(wddChild);
+    }
+  });
+  // show total number of credits of filtered courses
+  const creditsElement = document.getElementById('credits');
+  const creditCount = wddFilteredCourses.reduce((accumulator, course) => { 
+    return accumulator + course.credits;
+   }, 0);
+   
+  creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
+});
+
+const cseFilteredCourses = courses.filter((course) => course.subject == 'CSE');
+const cseLink = document.getElementById('cse-courses');
+cseLink.addEventListener('click', () => {
+  while (certificateDiv.firstChild) {
+    certificateDiv.removeChild(certificateDiv.firstChild);
+    }
+  cseFilteredCourses.forEach(course => {
+    const cseChild = document.createElement("p");
+    if (course.completed) {
+        cseChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        certificateDiv.appendChild(cseChild);
+    } else {
+        cseChild.innerText = `${course.subject} ${course.number}`;
+        certificateDiv.appendChild(cseChild);
+    }
+  });
+  // show total number of credits of filtered courses
+  const creditsElement = document.getElementById('credits');
+  const creditCount = cseFilteredCourses.reduce((accumulator, course) => { 
+    return accumulator + course.credits;
+   }, 0);
+   
+  creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
+});
+
 
