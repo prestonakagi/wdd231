@@ -366,9 +366,19 @@ footer {
         height: 100px;
     }
 
-    .classes-grid p {
+    /* .classes-grid p { */
+        .needed-course {
         /* want checked to be yellow, and not-checked orange */
+        /* not completed courses */
         background-color: orange;
+        border: solid 2px var(--text-color1);
+        height: 50px;
+        border-radius: var(--rounded-corners);
+        text-align: center;
+    }
+
+    .completed-course {
+        background-color: yellow;
         border: solid 2px var(--text-color1);
         height: 50px;
         border-radius: var(--rounded-corners);

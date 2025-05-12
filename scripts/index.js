@@ -157,9 +157,11 @@ courses.forEach(course => {
     const certChild = document.createElement("p");
     if (course.completed) {
         certChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        certChild.classList.add('completed-course');
         certificateDiv.appendChild(certChild);
     } else {
         certChild.innerText = `${course.subject} ${course.number}`;
+        certChild.classList.add('needed-course');
         certificateDiv.appendChild(certChild);
     }
     
@@ -186,9 +188,11 @@ allLink.addEventListener('click', () => {
     const allChild = document.createElement("p");
     if (course.completed) {
         allChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        allChild.classList.add('completed-course');
         certificateDiv.appendChild(allChild);
     } else {
         allChild.innerText = `${course.subject} ${course.number}`;
+        allChild.classList.add('needed-course');
         certificateDiv.appendChild(allChild);
     }
   });
@@ -211,9 +215,11 @@ wddLink.addEventListener('click', () => {
     const wddChild = document.createElement("p");
     if (course.completed) {
         wddChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        wddChild.classList.add('completed-course');
         certificateDiv.appendChild(wddChild);
     } else {
         wddChild.innerText = `${course.subject} ${course.number}`;
+        wddChild.classList.add('needed-course');
         certificateDiv.appendChild(wddChild);
     }
   });
@@ -236,9 +242,12 @@ cseLink.addEventListener('click', () => {
     const cseChild = document.createElement("p");
     if (course.completed) {
         cseChild.innerText = `✔️ ${course.subject} ${course.number}`;
+        // add class so CSS styles checked/complete course.
+        cseChild.classList.add('completed-course');
         certificateDiv.appendChild(cseChild);
     } else {
         cseChild.innerText = `${course.subject} ${course.number}`;
+        cseChild.classList.add('needed-course');
         certificateDiv.appendChild(cseChild);
     }
   });
