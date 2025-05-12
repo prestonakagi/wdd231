@@ -32,28 +32,31 @@
             </nav>
         </header>
         <main>
-            <h1>Home</h1>
-            <section class="course-work">
-                <h2>Course Work</h2>
-                <ul class="course-work-list">
-                    <li>Course Work 1</li>
-                    <li>Course Work 2</li>
-                    <li>Course Work 3</li>
-                </ul>
-            </section>
-            <section class="city">
-                <h2>Draper, Utah</h2>
-                <figure>
-                    <img class="tree" src="images/lights-tree.webp" alt="Tree with lights" loading="lazy">
-                    <figcaption>Tree lights</figcaption>
-                </figure>      
-            </section>
+            <div class="top-sections">
+                <h1>Home</h1>
+                <section class="course-work">
+                    <h2>Course Work</h2>
+                    <ul class="course-work-list">
+                        <li>Course Work 1</li>
+                        <li>Course Work 2</li>
+                        <li>Course Work 3</li>
+                    </ul>
+                </section>
+                <section class="city">
+                    <h2>Draper, Utah</h2>
+                    <figure>
+                        <img class="tree" src="images/lights-tree.webp" alt="Tree with lights" loading="lazy">
+                        <figcaption>Tree lights</figcaption>
+                    </figure>      
+                </section>
+            </div>
             <section class="certificate">
                 <h2>Web and Computer Programming Certificate</h2>
-                <!-- TODO: make 3 buttons -->
-                <button id="all-courses">All Courses</button>
-                <button id="wdd-courses">WDD Courses</button>
-                <button id="cse-courses">CSE Courses</button>
+                <div class="buttons">
+                    <button id="all-courses">All Courses</button>
+                    <button id="wdd-courses">WDD Courses</button>
+                    <button id="cse-courses">CSE Courses</button>
+                </div>
                 <span id="credits"></span>
                 <!-- js dynamically show filtered courses -->
                 <div class="classes-grid">

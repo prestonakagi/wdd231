@@ -49,7 +49,7 @@ const picElement = document.createElement("img");
 picElement.setAttribute("class", profile.className);
 picElement.setAttribute("src", profile.path);
 picElement.setAttribute("alt", profile.alternate);
-const nameElement = document.createElement("p");
+const nameElement = document.createElement("h2");
 nameElement.innerText = myName;
 
 banner.appendChild(picElement);
