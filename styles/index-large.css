@@ -373,7 +373,7 @@ footer {
     /* wayfinder shows ⭐ before link name after clicked on the link */
     /* TODO: I'm not sure how to do the wayfinder. .navigation a.active did not seem to work.*/
     .navigation a.active::before {
-        content: ⭐;
+        content: "You are here: ";
     }
 
     main {
