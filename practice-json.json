@@ -1,0 +1,23 @@
+{
+    "family_name": "Akagi", 
+    "move_in_date": "2020-04-20", 
+    "number_of_people": 3, 
+    "visited_by_bishopric": true, 
+    "family-members": [
+        {
+            "name": "Preston Akagi", 
+            "gender": "Male", 
+            "birthdate": "1990-03-03"
+        }, 
+        {
+            "name": "J Akagi", 
+            "gender": "Female", 
+            "birthdate": "1992-05-10"
+        }, 
+        {
+            "name": "K Akagi", 
+            "gender": "Female", 
+            "birthdate": "2022-06-06"
+        }
+    ]
+}
