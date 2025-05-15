@@ -1,0 +1,13 @@
+main {
+    /* use the auto-fit value to ensure that the page is responsive */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 0.5rem;
+}
+
+#cards section {
+    background-color: lightgray;
+    display: flex;
+	flex-direction: column;
+	align-items: center;
+}
