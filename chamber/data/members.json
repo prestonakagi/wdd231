@@ -1,0 +1,53 @@
+{
+"companies": [
+{"name": "M and M Automotive",  
+"address": "11535 S Lone Peak Pkwy, Draper, UT 84020", 
+"phone": 8012661552, 
+"website": "https://mmautorestyling.com", 
+"icon": "", 
+"level": 1
+}, 
+{"name": "Draper Dental",  
+"address": "668 E 12225 S Ste 101, Draper, UT 84020", 
+"phone": 8017628920, 
+"website": "https://draperdentalsolutions.com", 
+"icon": "",
+"level": 3
+}, 
+{"name": "Hand and Stone Draper",  
+"address": "12259 S 450 E Suite A, Draper, UT 84020", 
+"phone": 3855867634, 
+"website": "https://www.handandstone.com", 
+"icon": "",
+"level": 1
+},
+{"name": "The Joint Chiropractic",  
+"address": "213 E 12300 S H-2, Draper, UT 84020", 
+"phone": 8019191206, 
+"website": "https://thejoint.com", 
+"icon": "",
+"level": 2
+},
+{"name": "Draper Animal Hospital",  
+"address": "783 E 12300 S Suite A, Draper, UT 84020", 
+"phone": 8015532104, 
+"website": "https://draperanimalhospital.com", 
+"icon": "",
+"level": 2
+},
+{"name": "The Piano Place",  
+"address": "12576 S Fort St, Draper, UT 84020", 
+"phone": 8018932417, 
+"website": "https://thepianoplaceutah.com", 
+"icon": "",
+"level": 1
+},
+{"name": "Ballard's Iceberg Drive-in",  
+"address": "673 E 12300 S, Draper, UT 84020", 
+"phone": 8015712453, 
+"website": "https://ballardsiceberg.com", 
+"icon": "",
+"level": 1
+}
+]
+}
