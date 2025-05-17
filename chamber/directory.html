@@ -25,9 +25,11 @@
     </head>
     <body>
         <header>
-            <img id="favicon" src="" alt="green tree favicon" loading="lazy">
-            <h2 class="top-heading">Draper</h2>
-            <p>Chamber of Commerce</p>
+            <img class="logo" src="images/commerce-tree-svg.svg" alt="green tree favicon" loading="lazy">
+            <div class="top-title">
+                <h2 class="top-heading">Draper</h2>
+                <p>Chamber of Commerce</p>
+            </div>
             <nav>
                 <ul class="navigation">
                     <li class="link1"><a href="https://prestonakagi.github.io/wdd231">Home</a></li>
@@ -41,18 +43,18 @@
         <main>
             <!-- do the 3 sizes picture element for hero image -->
             <picture class="hero">
-                <source media="(min-width: px)" srcset="">
-                <source media="(min-width: px)" srcset="">
-                <img src="" alt="hero image" loading="lazy">
+                <!-- widest to smallest -->
+                <source media="(min-width: 600px)" srcset="images/directory-hero-medium.webp">
+                <img src="images/directory-hero-small.webp" alt="hero image" loading="lazy">
             </picture>
             <button id="ticket">Keynote Tickets</button>
             <h1>Home</h1>
-            <h2>Events</h2>
+            <h2 class="h-events">Events</h2>
             <section class="events"></section>
-            <h2>Current Weather</h2>
-            <!-- <section></section> but might be span-->
-            <h2>Weather Forecast</h2>
-            <!-- but might be span-->
+            <h2 class="h-current">Current Weather</h2>
+            <!-- <section></section> but might be span class="current"-->
+            <h2 class="h-forecast">Weather Forecast</h2>
+            <!-- but might be span class="forecast"-->
             <span id="members"></span>
         </main>
         <footer>
