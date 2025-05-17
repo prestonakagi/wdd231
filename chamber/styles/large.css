@@ -255,11 +255,14 @@ header {
     .hero {
         grid-row: 1 / 2;
         grid-column: 1 / 4;
-        position: relative;
         /* padding-top: 10px; */
         max-width: 100%;
         height: auto;
         /* margin: 0 auto; centers horizontally */
+    }
+
+    .hero img {
+        position: relative;
     }
 
     #ticket {
@@ -270,6 +273,13 @@ header {
         text-align: center;
         padding: 10px;
         position: absolute; /* TODO: */
+        bottom: 0;
+        right: 0;
+    }
+
+    #ticket:hover {
+    /* different background color (and text color) or border (different colored) */
+    background-color: var(--secondary-color);
     }
 
     h1 {
@@ -310,17 +320,22 @@ header {
     #members {
         grid-row: 5 / 6;
         grid-column: 1 / 4;
-        /* display: grid; */
-
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
     }
 
     #members section {
         background-color: beige;
         display: grid;
-        grid-template-rows: 20px repeat(5, 10px);
+        grid-template-rows: 20px repeat(5, 50px);
         grid-template-columns: 1fr 2fr;
         gap: 5px;
+        align-items: center;
+        height: auto;
         /* width: 400px; */
+        padding: 10px;
     }
 
     .co-name {
