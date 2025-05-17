@@ -96,7 +96,8 @@ const gridButton = document.querySelector("#grid");
 const listButton = document.querySelector("#list");
 
 gridButton.addEventListener("click", () => {
-	cards.classList.add("grid");
+	cards.classList.remove("grid");
+    cards.classList.add("grid");
 	cards.classList.remove("list");
 });
 
