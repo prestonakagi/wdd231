@@ -60,7 +60,7 @@ const displayCards = (companies) => {
     let icon = document.createElement("img");
 
     name.innerText = `${company.name}`;
-    businessTagLine.innerText = `temporary holder`;
+    businessTagLine.innerText = `${company.tagLine}`;
     address.innerText = `ADDRESS: ${company.address}`;
     email.innerText = `EMAIL: ${company.email}`;
     phone.innerText = `PHONE: ${company.phone}`;
