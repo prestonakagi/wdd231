@@ -6,7 +6,8 @@
 "website": "https://mmautorestyling.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/commerce-tree-svg.svg", 
 "level": 1, 
-"tagLine": "Repair. Modify. Upgrade."
+"tagLine": "Repair. Modify. Upgrade.", 
+"email": "mandmautomotive@gmail.com"
 }, 
 {"name": "Draper Dental",  
 "address": "668 E 12225 S Ste 101, Draper, UT 84020", 
@@ -14,7 +15,8 @@
 "website": "https://draperdentalsolutions.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/commerce-tree-svg.svg",
 "level": 3, 
-"tagLine": "Complete Dental Solutions"
+"tagLine": "Complete Dental Solutions", 
+"email": "draperdental@gmail.com"
 }, 
 {"name": "Hand and Stone Draper",  
 "address": "12259 S 450 E Suite A, Draper, UT 84020", 
@@ -22,7 +24,8 @@
 "website": "https://www.handandstone.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/commerce-tree-svg.svg",
 "level": 1, 
-"tagLine": "It's Glow Time"
+"tagLine": "It's Glow Time", 
+"email": "handandstone@gmail.com"
 },
 {"name": "The Joint Chiropractic",  
 "address": "213 E 12300 S H-2, Draper, UT 84020", 
@@ -30,7 +33,8 @@
 "website": "https://thejoint.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/commerce-tree-svg.svg",
 "level": 2, 
-"tagLine": "Quality Chiropractics"
+"tagLine": "Quality Chiropractics", 
+"email": "thejointchiropractic@gmail.com"
 },
 {"name": "Draper Animal Hospital",  
 "address": "783 E 12300 S Suite A, Draper, UT 84020", 
@@ -38,7 +42,8 @@
 "website": "https://draperanimalhospital.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/commerce-tree-svg.svg",
 "level": 2, 
-"tagLine": "Nourishing Strong, Intimate, Life-long Relationships"
+"tagLine": "Nourishing Strong, Intimate, Life-long Relationships", 
+"email": "draperanimalhospital@gmail.com"
 },
 {"name": "The Piano Place",  
 "address": "12576 S Fort St, Draper, UT 84020", 
@@ -46,7 +51,8 @@
 "website": "https://thepianoplaceutah.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/commerce-tree-svg.svg",
 "level": 1, 
-"tagLine": "Making More Than Musicians"
+"tagLine": "Making More Than Musicians", 
+"email": "thepianoplace@gmail.com"
 },
 {"name": "Ballard's Iceberg Drive-in",  
 "address": "673 E 12300 S, Draper, UT 84020", 
@@ -54,7 +60,8 @@
 "website": "https://ballardsiceberg.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/commerce-tree-svg.svg",
 "level": 1, 
-"tagLine": "Serving Deliciousness Daily"
+"tagLine": "Serving Deliciousness Daily", 
+"email": "ballardsiceberg@gmail.com"
 }
 ]
 }
