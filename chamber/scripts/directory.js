@@ -60,11 +60,17 @@ const displayCards = (companies) => {
     let icon = document.createElement("img");
 
     name.innerText = `${company.name}`;
+    name.setAttribute("class", "co-name");
     businessTagLine.innerText = `${company.tagLine}`;
+    businessTagLine.setAttribute("class", "co-tag");
     address.innerText = `ADDRESS: ${company.address}`;
+    address.setAttribute("class", "co-address");
     email.innerText = `EMAIL: ${company.email}`;
+    email.setAttribute("class", "co-email");
     phone.innerText = `PHONE: ${company.phone}`;
+    phone.setAttribute("class", "co-phone");
     url.innerText = `URL: ${company.website}`;
+    url.setAttribute("class", "co-url");
 
     icon.setAttribute("src", company.icon);
     icon.setAttribute("alt", `Icon of ${company.name}`);
@@ -87,3 +93,30 @@ const displayCards = (companies) => {
 
 // chamber's contact info
 const chamberContact = {title: "Draper Chamber of Commerce", street: "123 E 45678 S", city: "Draper, Utah 84020", email: "info@drapercc.org", phone: "(801) 333-4444"}
+
+const contactInfo = document.querySelector('#address-contact');
+
+// for (let i = 0; i < chamberContact.length; i++) {
+//     let pToAdd = document.createElement("p");
+//     let info = chamberContact[i];
+//     pToAdd.innerText = info;
+//     contactInfo.appendChild(pToAdd);
+// }
+
+const ctitle = document.createElement("p");
+const cstreet = document.createElement("p");
+const ccity = document.createElement("p");
+const cemail = document.createElement("p");
+const cphone = document.createElement("p");
+
+ctitle.innerText = `${chamberContact["title"]}`;
+cstreet.innerText = `${chamberContact["street"]}`;
+ccity.innerText = `${chamberContact["city"]}`;
+cemail.innerText = `${chamberContact["email"]}`;
+cphone.innerText = `${chamberContact["phone"]}`;
+
+contactInfo.appendChild(ctitle);
+contactInfo.appendChild(cstreet);
+contactInfo.appendChild(ccity);
+contactInfo.appendChild(cemail);
+contactInfo.appendChild(cphone);
