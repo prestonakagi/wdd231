@@ -91,6 +91,21 @@ const displayCards = (companies) => {
 }
 
 
+// buttons switch company cards grid and list
+const gridButton = document.querySelector("#grid");
+const listButton = document.querySelector("#list");
+
+gridButton.addEventListener("click", () => {
+	cards.classList.add("grid");
+	cards.classList.remove("list");
+});
+
+listButton.addEventListener("click", () => {
+	cards.classList.add("list");
+	cards.classList.remove("grid");
+});
+
+
 // chamber's contact info
 const chamberContact = {title: "Draper Chamber of Commerce", street: "123 E 45678 S", city: "Draper, Utah 84020", email: "info@drapercc.org", phone: "(801) 333-4444"}
 
