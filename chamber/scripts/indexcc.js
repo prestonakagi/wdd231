@@ -136,3 +136,11 @@ contactInfo.appendChild(cstreet);
 contactInfo.appendChild(ccity);
 contactInfo.appendChild(cemail);
 contactInfo.appendChild(cphone);
+
+
+const testArray = ["first", "second", "third", "fourth", "fifth"];
+
+const shuffled = testArray.sort(() => Math.random() - 0.5);
+const randomSelection = shuffled.slice(0, 3); // select 3 random elements from array, and returns an array. Selection changes each time page is loaded.
+console.log(randomSelection);
+
