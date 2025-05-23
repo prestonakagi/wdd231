@@ -49,7 +49,11 @@ async function getData() {
 getData();
 
 const displayCards = (companies) => {
-    companies.forEach((company) => {
+    let filteredCompanies = companies.filter(co => co.level > 1);
+    let shuffledFiltered = filteredCompanies.sort(() => Math.random() - 0.5);
+    let randomFiltered = shuffledFiltered.slice(0, 3); // select 3 random elements from array, and returns an array. Selection changes each time page is loaded.
+    
+    randomFiltered.forEach((company) => {
     let card = document.createElement("section");
     let name = document.createElement("h2");
     let businessTagLine = document.createElement("p"); //need put some info in JSON
@@ -57,6 +61,7 @@ const displayCards = (companies) => {
     let email = document.createElement("p");
     let phone = document.createElement("p");
     let url = document.createElement("p");
+    let level = document.createElement("p");
     let icon = document.createElement("img");
 
     name.innerText = `${company.name}`;
@@ -71,6 +76,8 @@ const displayCards = (companies) => {
     phone.setAttribute("class", "co-phone");
     url.innerText = `URL: ${company.website}`;
     url.setAttribute("class", "co-url");
+    level.innerText = `Level: ${company.level}`;
+    level.setAttribute("class", "co-level");
 
     icon.setAttribute("src", company.icon);
     icon.setAttribute("alt", `Icon of ${company.name}`);
@@ -84,6 +91,7 @@ const displayCards = (companies) => {
     card.appendChild(email);
     card.appendChild(phone);
     card.appendChild(url);
+    card.appendChild(level);
     card.appendChild(icon);
 
     cards.appendChild(card);
@@ -151,6 +159,9 @@ const weatherIcon = document.querySelector('#weather-icon');
 
 // https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=40.52&lon=-111.86&units=imperial&appid=cc7252cbfcb57d0a8dcd1a1bfbab9acb';
+// https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+const urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?lat=40.52&lon=-111.86&units=imperial&appid=cc7252cbfcb57d0a8dcd1a1bfbab9acb';
+
 
 async function apiFetch() {
     try {
@@ -159,6 +170,19 @@ async function apiFetch() {
             const data = await response.json();
             console.log(data); // testing only
             displayResults(data); // uncomment when ready (this is from the learning activity)
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+    try {
+        const responseForecast = await fetch(urlForecast);
+        if (responseForecast.ok) {
+            const dataForecast = await responseForecast.json();
+            console.log(dataForecast); // testing only
+            displayForecast(dataForecast);
         } else {
             throw Error(await response.text());
         }
@@ -200,3 +224,36 @@ function displayResults(data) {
     // not sure if above url is `https://openweathermap.org/img/w/${iconCode}@2x.png` or without @2x too.
     weatherIcon.setAttribute('alt', `${data.weather[0].description}`);
 }
+
+
+const spanForecast = document.querySelector('.forecast');
+
+// need add displayForecast(data) in to DisplayResults function.
+function displayForecast(data) {
+    let today = document.createElement("p");
+    let tomorrow = document.createElement("p");
+    let nextDay = document.createElement("p");
+    
+    // indexes 5, 13, 21
+    today.innerText = `Today: ${Math.round(data.list[5].main.temp_max)}°F`;
+    tomorrow.innerText = `Tomorrow: ${Math.round(data.list[13].main.temp_max)}°F`;
+    nextDay.innerText = `Day After Tomorrow: ${Math.round(data.list[21].main.temp_max)}°F`;
+    
+    spanForecast.appendChild(today);
+    spanForecast.appendChild(tomorrow);
+    spanForecast.appendChild(nextDay);
+}
+
+
+// for showing the 3 spotlight companies:
+// first need change levels until all but 1 company has level 2 or 3!!
+// In displayCards, filter companies array for level > 1. Then randomly select from that filtered array.
+//let filteredCompanies = companies.filter(co => co.level > 1);
+//let shuffledFiltered = filteredCompanies.sort(() => Math.random() - 0.5);
+//let randomFiltered = shuffledFiltered.slice(0, 3); // select 3 random elements from array, and returns an array. Selection changes each time page is loaded.
+// then replace companies array in (original) displayCards with the array made after random selection
+  // also need to show membership level (before icon and after url)!
+//   let level = document.createElement("p");
+//   level.innerText = `${company.level}`;
+//   level.setAttribute("class", "co-level");
+//   card.appendChild(level);

@@ -5,7 +5,7 @@
 "phone": "801-266-1552", 
 "website": "https://mmautorestyling.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/car.svg", 
-"level": 1, 
+"level": 3, 
 "tagLine": "Repair. Modify. Upgrade.", 
 "email": "mandmautomotive@gmail.com"
 }, 
@@ -23,7 +23,7 @@
 "phone": "385-586-7634", 
 "website": "https://www.handandstone.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/hands.svg",
-"level": 1, 
+"level": 2, 
 "tagLine": "It's Glow Time", 
 "email": "handandstone@gmail.com"
 },
@@ -50,7 +50,7 @@
 "phone": "801-893-2417", 
 "website": "https://thepianoplaceutah.com", 
 "icon": "https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/piano.svg",
-"level": 1, 
+"level": 2, 
 "tagLine": "Making More Than Musicians", 
 "email": "thepianoplace@gmail.com"
 },
