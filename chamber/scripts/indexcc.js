@@ -245,15 +245,8 @@ function displayForecast(data) {
 }
 
 
-// for showing the 3 spotlight companies:
-// first need change levels until all but 1 company has level 2 or 3!!
-// In displayCards, filter companies array for level > 1. Then randomly select from that filtered array.
-//let filteredCompanies = companies.filter(co => co.level > 1);
-//let shuffledFiltered = filteredCompanies.sort(() => Math.random() - 0.5);
-//let randomFiltered = shuffledFiltered.slice(0, 3); // select 3 random elements from array, and returns an array. Selection changes each time page is loaded.
-// then replace companies array in (original) displayCards with the array made after random selection
-  // also need to show membership level (before icon and after url)!
-//   let level = document.createElement("p");
-//   level.innerText = `${company.level}`;
-//   level.setAttribute("class", "co-level");
-//   card.appendChild(level);
+// join button on click to go to Join page
+
+document.getElementById('join').addEventListener('click', function() {
+    window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/directory.html'; // directory page to test. And it worked!
+  });
