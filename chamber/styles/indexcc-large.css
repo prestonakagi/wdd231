@@ -149,6 +149,8 @@ header {
 
 .hero img {
     position: relative;
+    width: 100%;
+    height: auto;
 }
 #join {
     background-color: var(--primary-color);
@@ -158,9 +160,10 @@ header {
     text-align: center;
     padding: 10px;
     position: absolute; /* TODO: */
-    bottom: 30%;
+    bottom: 50%;
     right: 10%;
 }
+
 #join:hover {
 /* different background color (and text color) or border (different colored) */
 background-color: var(--secondary-color);

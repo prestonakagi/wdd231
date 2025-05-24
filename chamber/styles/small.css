@@ -149,6 +149,8 @@ header {
 
 .hero img {
     position: relative;
+    width: 100%;
+    height: auto;
 }
 #ticket {
     background-color: var(--primary-color);
@@ -157,10 +159,11 @@ header {
     border-radius: var(--rounded-corners);
     text-align: center;
     padding: 10px;
-    position: absolute; /* TODO: */
-    bottom: 30%;
+    position: absolute;
+    bottom: 50%;
     right: 10%;
 }
+
 #ticket:hover {
 /* different background color (and text color) or border (different colored) */
 background-color: var(--secondary-color);
