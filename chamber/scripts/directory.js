@@ -136,3 +136,96 @@ contactInfo.appendChild(cstreet);
 contactInfo.appendChild(ccity);
 contactInfo.appendChild(cemail);
 contactInfo.appendChild(cphone);
+
+
+// weather API. Need current temp and weather description, and 3 day temp forecast.
+// description should include cloudiness, high, low, humidity, sunrise time and sunset time.
+const currentDescription = document.querySelector('#current');
+const weatherIcon = document.querySelector('#weather-icon');
+
+// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=40.52&lon=-111.86&units=imperial&appid=cc7252cbfcb57d0a8dcd1a1bfbab9acb';
+// https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+const urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?lat=40.52&lon=-111.86&units=imperial&appid=cc7252cbfcb57d0a8dcd1a1bfbab9acb';
+
+
+async function apiFetch() {
+    try {
+        const response = await fetch(urlWeather);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data); // testing only
+            displayResults(data); // uncomment when ready (this is from the learning activity)
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
+
+    try {
+        const responseForecast = await fetch(urlForecast);
+        if (responseForecast.ok) {
+            const dataForecast = await responseForecast.json();
+            console.log(dataForecast); // testing only
+            displayForecast(dataForecast);
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+apiFetch();
+
+function displayResults(data) {
+    let temp = document.createElement("p");
+    let cloudiness = document.createElement("p");
+    let high = document.createElement("p");
+    let low = document.createElement("p");
+    let humidity = document.createElement("p");
+    let sunrise = document.createElement("p");
+    let sunset = document.createElement("p");
+    
+    temp.innerText = `${Math.round(data.main.temp)}°F`;
+    cloudiness.innerText = `${data.weather[0].description}`;
+    high.innerText = `High: ${Math.round(data.main.temp_max)}°F`;
+    low.innerText = `Low: ${Math.round(data.main.temp_min)}°F`;
+    humidity.innerText = `Humidity: ${data.main.humidity}%`;
+    // TODO: how convert the sunrise and sunset integers to times am and pm?
+    sunrise.innerText = `Sunrise: ${data.sys.sunrise}`;
+    sunset.innerText = `Sunset: ${data.sys.sunset}`;
+
+    currentDescription.appendChild(temp);
+    currentDescription.appendChild(cloudiness);
+    currentDescription.appendChild(high);
+    currentDescription.appendChild(low);
+    currentDescription.appendChild(humidity);
+    currentDescription.appendChild(sunrise);
+    currentDescription.appendChild(sunset);
+
+    let iconCode = data.weather[0].icon;
+    weatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${iconCode}@2x.png`);
+    // not sure if above url is `https://openweathermap.org/img/w/${iconCode}@2x.png` or without @2x too.
+    weatherIcon.setAttribute('alt', `${data.weather[0].description}`);
+}
+
+
+const spanForecast = document.querySelector('.forecast');
+
+// need add displayForecast(data) in to DisplayResults function.
+function displayForecast(data) {
+    let today = document.createElement("p");
+    let tomorrow = document.createElement("p");
+    let nextDay = document.createElement("p");
+    
+    // indexes 5, 13, 21
+    today.innerText = `Today: ${Math.round(data.list[5].main.temp_max)}°F`;
+    tomorrow.innerText = `Tomorrow: ${Math.round(data.list[13].main.temp_max)}°F`;
+    nextDay.innerText = `Day After Tomorrow: ${Math.round(data.list[21].main.temp_max)}°F`;
+    
+    spanForecast.appendChild(today);
+    spanForecast.appendChild(tomorrow);
+    spanForecast.appendChild(nextDay);
+}
