@@ -68,6 +68,13 @@ p, li, #credits, figcaption {
     padding: 10px;
 }
 
+p {
+    max-width: 100%; /* Ensures the paragraph doesn't exceed the screen width */
+    word-wrap: break-word; /* Breaks long words to prevent overflow */
+    overflow-wrap: break-word; /* Alternative for better browser support */
+    margin: 0 auto; /* Centers the paragraph if needed */
+}
+
 nav {
     background-color: var(--primary-color);
 }
@@ -234,6 +241,7 @@ color: var(--text-color2);
     text-align: left;
     background-color: beige;
     max-width: 100%;
+    flex-wrap: wrap;
 }
 .list section:nth-child(even), .list section:nth-child(even) h2 {
     background-color: var(--primary-color);
@@ -549,6 +557,7 @@ footer {
     #members {
         grid-row: 6 / 7;
         grid-column: 1 / 4;
+        /* max-width: 100%; */
         /* display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr; */

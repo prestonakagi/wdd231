@@ -234,6 +234,7 @@ color: var(--text-color2);
     text-align: left;
     background-color: beige;
     max-width: 100%;
+    flex-wrap: wrap;
 }
 .list section:nth-child(even), .list section:nth-child(even) h2 {
     background-color: var(--primary-color);
