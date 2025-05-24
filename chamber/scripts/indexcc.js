@@ -248,9 +248,12 @@ function displayResults(data) {
     currentDescription.appendChild(sunset);
 
     let iconCode = data.weather[0].icon;
-    weatherIcon.setAttribute('src', `https://openweathermap.org/img/wn/${iconCode}@2x.png`);
+    let weatherIconImage = document.createElement("img");
+    weatherIconImage.setAttribute('src', `https://openweathermap.org/img/wn/${iconCode}@2x.png`);
     // not sure if above url is `https://openweathermap.org/img/w/${iconCode}@2x.png` or without @2x too.
-    weatherIcon.setAttribute('alt', `${data.weather[0].description}`);
+    weatherIconImage.setAttribute('alt', `${data.weather[0].description}`);
+    weatherIconImage.setAttribute('loading', 'lazy');
+    weatherIcon.appendChild(weatherIconImage);
 }
 
 
