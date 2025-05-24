@@ -207,9 +207,37 @@ function displayResults(data) {
     high.innerText = `High: ${Math.round(data.main.temp_max)}°F`;
     low.innerText = `Low: ${Math.round(data.main.temp_min)}°F`;
     humidity.innerText = `Humidity: ${data.main.humidity}%`;
-    // TODO: how convert the sunrise and sunset integers to times am and pm?
-    sunrise.innerText = `Sunrise: ${data.sys.sunrise}`;
-    sunset.innerText = `Sunset: ${data.sys.sunset}`;
+    // how convert the sunrise and sunset integers to times am and pm?
+    let timeSunrise = data.sys.sunrise;
+    let dateSunrise = new Date(timeSunrise*1000);
+    // Hours part from the timestamp
+    let hoursSunrise = dateSunrise.getHours();
+
+    // Minutes part from the timestamp
+    let minutesSunrise = "0" + dateSunrise.getMinutes();
+
+    // Seconds part from the timestamp
+    // let secondsSunrise = "0" + dateSunrise.getSeconds();
+
+    // Will display time in 10:30:23 format
+    let formattedTimeSunrise = hoursSunrise + ':' + minutesSunrise.substr(-2);
+
+    let timeSunset = data.sys.sunset;
+    let dateSunset = new Date(timeSunset*1000);
+    // Hours part from the timestamp
+    let hoursSunset = dateSunset.getHours();
+
+    // Minutes part from the timestamp
+    let minutesSunset = "0" + dateSunset.getMinutes();
+
+    // Seconds part from the timestamp
+    // let secondsSunset = "0" + dateSunset.getSeconds();
+
+    // Will display time in 10:30:23 format
+    let formattedTimeSunset = hoursSunset + ':' + minutesSunset.substr(-2);
+
+    sunrise.innerText = `Sunrise (24 hr): ${formattedTimeSunrise}`;
+    sunset.innerText = `Sunset (24 hr): ${formattedTimeSunset}`;
 
     currentDescription.appendChild(temp);
     currentDescription.appendChild(cloudiness);
