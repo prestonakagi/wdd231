@@ -268,12 +268,23 @@ const buttonOne = document.getElementById("button1");
 
 buttonOne.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber';
-    buttonOne.classList.toggle('wayfinder');
 });
 
 const buttonTwo = document.getElementById("button2");
+buttonTwo.classList.add('wayfinder');
 
 buttonTwo.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/directory.html';
-    buttonTwo.classList.toggle('wayfinder');
+});
+
+const buttonThree = document.getElementById("button3");
+
+buttonThree.addEventListener('click', function() {
+    window.location.href = '';
+});
+
+const buttonFour = document.getElementById("button4");
+
+buttonFour.addEventListener('click', function() {
+    window.location.href = '';
 });

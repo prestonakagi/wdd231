@@ -33,7 +33,7 @@ h1 {
     justify-self: center;
 }
 
-.navigation a {
+.navigation button {
     font-family: "Merriweather", serif;
     font-weight: 400;
     font-style: normal;
@@ -66,13 +66,6 @@ p, li, #credits, figcaption {
     color: black;
     /* color: var(--text-color1); */
     padding: 10px;
-}
-
-p {
-    max-width: 100%; /* Ensures the paragraph doesn't exceed the screen width */
-    word-wrap: break-word; /* Breaks long words to prevent overflow */
-    overflow-wrap: break-word; /* Alternative for better browser support */
-    margin: 0 auto; /* Centers the paragraph if needed */
 }
 
 nav {
@@ -151,7 +144,7 @@ header {
 }
 
 .wayfinder::before {
-    content: "Here: ";
+    content: "* ";
 }
 
 .top-title {

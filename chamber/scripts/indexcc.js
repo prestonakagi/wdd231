@@ -281,3 +281,31 @@ function displayForecast(data) {
 document.getElementById('join').addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/directory.html'; // directory page to test. And it worked!
   });
+
+
+  // top navigation buttons on click to go to respective link AND put wayfinder.
+
+const buttonOne = document.getElementById("button1");
+buttonOne.classList.add('wayfinder');
+
+buttonOne.addEventListener('click', function() {
+    window.location.href = 'https://prestonakagi.github.io/wdd231/chamber';
+});
+
+const buttonTwo = document.getElementById("button2");
+
+buttonTwo.addEventListener('click', function() {
+    window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/directory.html';
+});
+
+const buttonThree = document.getElementById("button3");
+
+buttonThree.addEventListener('click', function() {
+    window.location.href = '';
+});
+
+const buttonFour = document.getElementById("button4");
+
+buttonFour.addEventListener('click', function() {
+    window.location.href = '';
+});
