@@ -159,8 +159,16 @@ header {
     text-align: left;
 }
 
+.hero {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
 .hero img {
-    position: relative;
+    grid-row: 1 / 4;
+    grid-column: 1 / 4;
+    /* position: relative; */
     width: 100%;
     height: auto;
 }
@@ -171,9 +179,12 @@ header {
     border-radius: var(--rounded-corners);
     text-align: center;
     padding: 10px;
-    position: absolute;
-    bottom: 50%;
-    right: 10%;
+    /* position: absolute; */
+    /* bottom: 50%; */
+    /* right: 10%; */
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+    z-index: 2;
 }
 
 #ticket:hover {
@@ -462,10 +473,18 @@ footer {
         height: auto;
         /* margin: 0 auto; centers horizontally */
         justify-self: center;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
     }
 
     .hero img {
-        position: relative;
+        grid-row: 1 / 4;
+        grid-column: 1 / 4;
+        /* position: relative; */
+        width: 100%;
+        height: auto;
+        z-index: 1;
     }
 
     #ticket {
@@ -475,9 +494,12 @@ footer {
         border-radius: var(--rounded-corners);
         text-align: center;
         padding: 10px;
-        position: absolute; /* TODO: */
-        bottom: 7%;
-        right: 22%;
+        /* position: absolute; */
+        /* bottom: 7%; */
+        /* right: 22%; */
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+        z-index: 2;
     }
 
     #ticket:hover {
