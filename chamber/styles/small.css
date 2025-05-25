@@ -158,16 +158,8 @@ header {
     text-align: left;
 }
 
-.hero {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
 .hero img {
-    grid-row: 1 / 4;
-    grid-column: 1 / 4;
-    /* position: relative; */
+    position: relative;
     width: 100%;
     height: auto;
 }
@@ -178,12 +170,9 @@ header {
     border-radius: var(--rounded-corners);
     text-align: center;
     padding: 10px;
-    /* position: absolute; */
-    /* bottom: 50%; */
-    /* right: 10%; */
-    grid-row: 3 / 4;
-    grid-column: 3 / 4;
-    z-index: 2;
+    position: absolute;
+    bottom: 50%;
+    right: 10%;
 }
 
 #ticket:hover {
@@ -277,16 +266,6 @@ color: var(--text-color2);
     /* width: 400px; */
     padding: 10px;
 }
-
-.grid section h2 {
-    /* width: 100%; did not work*/
-    /* max-width: 100%; did not work*/
-    width: max-content;
-    height: 100%;
-    text-align: center;
-    justify-content: center;
-}
-
 .co-name {
     background-color: beige;
     color: var(--text-color1);
