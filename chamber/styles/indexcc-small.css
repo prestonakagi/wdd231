@@ -267,6 +267,16 @@ color: var(--text-color2);
     /* width: 400px; */
     padding: 10px;
 }
+
+.grid section h2 {
+    /* width: 100%; did not work*/
+    /* max-width: 100%; did not work*/
+    width: max-content;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
 .co-name {
     background-color: beige;
     color: var(--text-color1);
