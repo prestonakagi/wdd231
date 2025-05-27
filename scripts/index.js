@@ -154,7 +154,7 @@ const courses = [
 // display all courses
 const certificateDiv = document.querySelector('.classes-grid');
 courses.forEach(course => {
-    const certChild = document.createElement("p");
+    const certChild = document.createElement("button");
     if (course.completed) {
         certChild.innerText = `✔️ ${course.subject} ${course.number}`;
         certChild.classList.add('completed-course');
@@ -172,7 +172,19 @@ courses.forEach(course => {
    }, 0);
    
   creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
+
+  // display modal when click course button
+  // only way to close modal is to click top right X button
+  // modal only works (after/) when page is loaded; not after click one of the 3 filtering buttons.
+  certChild.addEventListener('click', () => {
+    displayCourseDetails(course);
+  });
 });
+
+// // display modal when click course button
+// courseDiv.addEventListener('click', () => {
+//   displayCourseDetails(course);
+// });
 
 // display filtered courses for WDD courses and CSE courses
 // using buttons that listen for the click event.
@@ -185,7 +197,7 @@ allLink.addEventListener('click', () => {
     certificateDiv.removeChild(certificateDiv.firstChild);
     }
   courses.forEach(course => {
-    const allChild = document.createElement("p");
+    const allChild = document.createElement("button");
     if (course.completed) {
         allChild.innerText = `✔️ ${course.subject} ${course.number}`;
         allChild.classList.add('completed-course');
@@ -203,6 +215,13 @@ allLink.addEventListener('click', () => {
    }, 0);
    
   creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
+
+  // display modal when click course button
+  // only way to close modal is to click top right X button
+  // only works for certChild above for some reason.
+  // allChild.addEventListener('click', () => {
+  //   displayCourseDetails(course);
+  // });
 });
 
 const wddFilteredCourses = courses.filter((course) => course.subject == 'WDD');
@@ -212,7 +231,7 @@ wddLink.addEventListener('click', () => {
     certificateDiv.removeChild(certificateDiv.firstChild);
     }
   wddFilteredCourses.forEach(course => {
-    const wddChild = document.createElement("p");
+    const wddChild = document.createElement("button");
     if (course.completed) {
         wddChild.innerText = `✔️ ${course.subject} ${course.number}`;
         wddChild.classList.add('completed-course');
@@ -230,6 +249,13 @@ wddLink.addEventListener('click', () => {
    }, 0);
    
   creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
+
+    // display modal when click course button
+  // only way to close modal is to click top right X button
+  // only works for certChild above for some reason.
+  // wddChild.addEventListener('click', () => {
+  //   displayCourseDetails(course);
+  // });
 });
 
 const cseFilteredCourses = courses.filter((course) => course.subject == 'CSE');
@@ -239,7 +265,7 @@ cseLink.addEventListener('click', () => {
     certificateDiv.removeChild(certificateDiv.firstChild);
     }
   cseFilteredCourses.forEach(course => {
-    const cseChild = document.createElement("p");
+    const cseChild = document.createElement("button");
     if (course.completed) {
         cseChild.innerText = `✔️ ${course.subject} ${course.number}`;
         // add class so CSS styles checked/complete course.
@@ -258,6 +284,34 @@ cseLink.addEventListener('click', () => {
    }, 0);
    
   creditsElement.innerText = `The total number of credits for the courses listed below is ${creditCount}.`;
+
+  // display modal when click course button
+  // only way to close modal is to click top right X button
+  // only works for certChild above for some reason.
+  // wddChild.addEventListener('click', () => {
+  //   displayCourseDetails(course);
+  // });
 });
 
 
+// for dialog windows
+
+const courseDetails = document.getElementById('course-details');
+
+function displayCourseDetails(course) {
+  courseDetails.innerHTML = '';
+  courseDetails.innerHTML = `
+    <button id="closeModal">X</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+  `;
+  courseDetails.showModal();
+
+  // To close the modal when click X button
+  closeModal.addEventListener("click", () => {
+    courseDetails.close();
+  });
+}

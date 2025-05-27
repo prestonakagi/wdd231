@@ -254,12 +254,44 @@ border: solid 2px black;
     border-radius: var(--rounded-corners);
     text-align: center;
 }
+
+.needed-course:hover {
+    background-color: var(--primary-color);
+}
+
 .completed-course {
     background-color: yellow;
     border: solid 2px var(--text-color1);
     height: 50px;
     border-radius: var(--rounded-corners);
     text-align: center;
+}
+
+.completed-course:hover {
+    background-color: var(--primary-color);
+}
+
+#course-details {
+    border: 1px solid rgb(0 0 0 / 10%);
+    border-radius: .25rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0 3rem #777;
+    width: 90%;
+    max-width: 600px;
+}
+
+::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+}
+
+/* The button made by JavaScript. */
+#course-details button {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    padding: .5rem 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
 }
 
 footer {
@@ -504,6 +536,10 @@ footer {
         text-align: center;
     }
 
+    .needed-course:hover {
+        background-color: var(--primary-color);
+    }
+
     .completed-course {
         background-color: yellow;
         border: solid 2px var(--text-color1);
@@ -511,6 +547,34 @@ footer {
         border-radius: var(--rounded-corners);
         text-align: center;
     }
+
+    .completed-course:hover {
+        background-color: var(--primary-color);
+    }
+
+    #course-details {
+        border: 1px solid rgb(0 0 0 / 10%);
+        border-radius: .25rem;
+        padding: 1rem;
+        background-color: #fff;
+        box-shadow: 0 0 3rem #777;
+        width: 90%;
+        max-width: 600px;
+    }
+
+    ::backdrop {
+        background-color: rgb(0 0 0 / 50%);
+    }
+
+    /* The button made by JavaScript. */
+    #course-details button {
+        position: absolute;
+        top: 23px;
+        right: 23px;
+        padding: .5rem 1rem;
+        border: 1px solid rgb(0 0 0 / 10%);
+    }
+
 
     footer {
         background-color: var(--primary-color);
