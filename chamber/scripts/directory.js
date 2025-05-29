@@ -280,7 +280,7 @@ buttonTwo.addEventListener('click', function() {
 const buttonThree = document.getElementById("button3");
 
 buttonThree.addEventListener('click', function() {
-    window.location.href = '';
+    window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/join.html';
 });
 
 const buttonFour = document.getElementById("button4");
