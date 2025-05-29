@@ -43,30 +43,75 @@
         </header>
         <main>
             <!-- do the 3 sizes picture element for hero image -->
-            <picture class="hero">
-                <!-- widest to smallest -->
-                <source media="(min-width: 600px)" srcset="images/directory-hero-medium.webp">
-                <img src="images/directory-hero-small.webp" alt="hero image" loading="lazy">
-            </picture>
-            <button id="join">Register now</button>
-            <h1>Home</h1>
-            <h2 class="h-cevents">Current Events</h2>
-            <section class="cevents">
-                <ol>
-                    <li>5/27/25 7:00 pm Chamber Meeting</li>
-                    <li>5/28/25 7:00 pm Local Businesses Meet and Greet</li>
-                    <li>6/4/25 10:00 am Weekly Podcast Launches</li>
-                </ol>
-            </section>
-            <h2 class="h-current">Current Weather</h2>
-            <!-- <section></section> but might be span class="current"-->
-            <section class="current">
-                <span id="current"></span>
-                <!-- <img id="weather-icon" src="" alt="" loading="lazy"> -->
-                <span id="weather-icon"></span>
-            </section>
-            <h2 class="h-forecast">Weather Forecast</h2>
-            <span class="forecast"></span>
+            <h1>Join</h1>
+            <!-- Form -->
+            <form class="form" method="get" action="thankyou.html" id="form">
+                <label class="top-label" for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" title="Enter your first name here." autocomplete="on" required>
+                <label class="top-label" for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" title="Enter your last name here." autocomplete="on" required>
+
+                <!-- organizational title -->
+                <label class="top-label" for="org-title">Organizational Title</label>
+                <input type="text" id="org-title" name="org-title" title="Enter your title in your organization here." autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                <!-- pattern above is for minimum 7 characters, accept alpha characters, hyphens, and spaces -->
+
+                <label class="top-label" for="email">Email</label>
+                <input type="email" id="email" name="email" title="Enter your email here." autocomplete="on" required> <!-- TODO: put placeholder of an example email-->
+                
+
+                <label class="top-label" for="product-name">Product Name</label>
+                <select class="select" id="product-name" name="product-name" required>
+                    <option value="select-a-product" disabled selected>Select a Product...</option>
+                    <!-- Rest of options will be created dynamically JavaScript -->
+                </select>
+
+                <p>Overall Rating</p> <!-- Or a p element? -->
+                <div class="radio">
+                    <label for="1-star">&star;</label>
+                    <input type="radio" id="1-star" name="overall-rating" value="1-star" required>
+                    <label for="2-star">&star;&star;</label>
+                    <input type="radio" id="2-star" name="overall-rating" value="2-star" required>
+                    <label for="3-star">&star;&star;&star;</label>
+                    <input type="radio" id="3-star" name="overall-rating" value="3-star" required>
+                    <label for="4-star">&star;&star;&star;&star;</label>
+                    <input type="radio" id="4-star" name="overall-rating" value="4-star" required>
+                    <label for="5-star">&star;&star;&star;&star;&star;</label>
+                    <input type="radio" id="5-star" name="overall-rating" value="5-star" required>
+                </div>
+
+                <label class="top-label" for="date-of-installation">Date of Installation</label>
+                <input type="date" id="date-of-installation" name="date-of-installation" required>
+
+                <p>Which features did you find useful in the product?<br>(Check all that apply)</p> <!-- Or a p element? -->
+                <div class="checkbox">
+                    <div class="feat1">
+                        <input type="checkbox" id="feature1" name="feature1" value="Durability">
+                        <label for="feature1">Durability</label><br>
+                    </div>
+                    <div class="feat2">
+                        <input type="checkbox" id="feature2" name="feature2" value="Ease-of-Use">
+                        <label for="feature2">Ease of Use</label><br>
+                    </div>
+                    <div class="feat3">
+                        <input type="checkbox" id="feature3" name="feature3" value="Performance">
+                        <label for="feature3">Performance</label><br>
+                    </div>
+                    <div class="feat4">
+                        <input type="checkbox" id="feature4" name="feature4" value="Design">
+                        <label for="feature4">Design</label><br>
+                    </div>
+                </div>
+
+                <label class="top-label" for="written-review">Written Review (Optional)</label>
+                <textarea id="written-review" name="written-review" rows="10"></textarea>  <!-- need add attributes rows and cols? -->
+
+                <label class="top-label" for="user-name">Your Name (Optional)</label>
+                <input type="text" id="user-name" name="user-name">
+
+                <input type="submit" id="submit" value="Send Review">
+            </form>
+
             <div class="view-options">
                 <button id="grid">Grid</button>
                 <button id="list">List</button>
