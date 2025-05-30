@@ -20,6 +20,10 @@ const lastMod = document.getElementById("lastModified");
 lastMod.innerText = document.lastModified;
 
 
+// Form hidden type for timestamp
+document.getElementById('timestamp').value = new Date().toISOString();
+
+
 // responsive hamburger effect on nav menu.
 
 // hamburger button only show in mobile (small) view.

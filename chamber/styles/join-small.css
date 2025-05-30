@@ -33,7 +33,7 @@ h1 {
     justify-self: center;
 }
 
-.navigation button {
+.navigation a {
     font-family: "Merriweather", serif;
     font-weight: 400;
     font-style: normal;
@@ -66,6 +66,13 @@ p, li, #credits, figcaption {
     color: black;
     /* color: var(--text-color1); */
     padding: 10px;
+}
+
+p {
+    max-width: 100%; /* Ensures the paragraph doesn't exceed the screen width */
+    word-wrap: break-word; /* Breaks long words to prevent overflow */
+    overflow-wrap: break-word; /* Alternative for better browser support */
+    margin: 0 auto; /* Centers the paragraph if needed */
 }
 
 nav {
@@ -103,14 +110,6 @@ header {
     display: none; /* To not display list before click "hamburger" button */
 }
 
-.navigation li button {
-    padding: 10px;
-    background-color: var(--primary-color);
-    border: none;
-    /* width: 20px;
-    height: 20px; */
-}
-
 .show li { /* JavaScript will make the show class */
     display: block;
 }
@@ -128,7 +127,7 @@ header {
     background-color: var(--primary-color);
 }
 
-.navigation button {
+.navigation a {
     display: block;
     padding: 1rem;
     text-decoration: none;
@@ -137,7 +136,7 @@ header {
     color: black;
 }
 
-.navigation button:hover {
+.navigation a:hover {
     /* different background color (and text color) or border (different colored) */
     background-color: var(--secondary-color);
     border: solid 1px white;
@@ -164,19 +163,19 @@ header {
     width: 100%;
     height: auto;
 }
-#join {
+#ticket {
     background-color: var(--primary-color);
     border: solid 2px var(--text-color1);
     height: 50px;
     border-radius: var(--rounded-corners);
     text-align: center;
     padding: 10px;
-    position: absolute; /* TODO: */
+    position: absolute;
     bottom: 50%;
     right: 10%;
 }
 
-#join:hover {
+#ticket:hover {
 /* different background color (and text color) or border (different colored) */
 background-color: var(--secondary-color);
 color: var(--text-color2);  
@@ -258,7 +257,7 @@ color: var(--text-color2);
 .grid section {
     background-color: beige;
     display: grid;
-    grid-template-rows: 20px repeat(6, 50px);
+    grid-template-rows: 20px repeat(5, 50px);
     grid-template-columns: 1fr 2fr;
     gap: 5px;
     align-items: center;
@@ -294,12 +293,6 @@ color: var(--text-color2);
     grid-row: 6 / 7;
     grid-column: 2 / 3;
 }
-
-.co-level {
-    grid-row: 7 / 8;
-    grid-column: 2 / 3;
-}
-
 section img {
     grid-row: 3 / 7;
     grid-column: 1 / 2;

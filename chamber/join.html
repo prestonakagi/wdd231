@@ -57,59 +57,34 @@
                 <!-- pattern above is for minimum 7 characters, accept alpha characters, hyphens, and spaces -->
 
                 <label class="top-label" for="email">Email</label>
-                <input type="email" id="email" name="email" title="Enter your email here." autocomplete="on" required> <!-- TODO: put placeholder of an example email-->
+                <input type="email" id="email" name="email" title="Enter your email here." autocomplete="on" placeholder="example@exampledomain.com" required>
                 
+                <label class="top-label" for="phone">Mobile Phone</label>
+                <input type="tel" id="phone" name="phone" title="Enter your mobile phone number here." autocomplete="on" required>
 
-                <label class="top-label" for="product-name">Product Name</label>
-                <select class="select" id="product-name" name="product-name" required>
-                    <option value="select-a-product" disabled selected>Select a Product...</option>
-                    <!-- Rest of options will be created dynamically JavaScript -->
-                </select>
+                <label class="top-label" for="org-name">Organization's Name</label>
+                <input type="text" id="org-name" name="org-name" title="Enter the name of your organization here." autocomplete="organization" required>                
 
-                <p>Overall Rating</p> <!-- Or a p element? -->
+                <p>Select a Membership Level</p>
                 <div class="radio">
-                    <label for="1-star">&star;</label>
-                    <input type="radio" id="1-star" name="overall-rating" value="1-star" required>
-                    <label for="2-star">&star;&star;</label>
-                    <input type="radio" id="2-star" name="overall-rating" value="2-star" required>
-                    <label for="3-star">&star;&star;&star;</label>
-                    <input type="radio" id="3-star" name="overall-rating" value="3-star" required>
-                    <label for="4-star">&star;&star;&star;&star;</label>
-                    <input type="radio" id="4-star" name="overall-rating" value="4-star" required>
-                    <label for="5-star">&star;&star;&star;&star;&star;</label>
-                    <input type="radio" id="5-star" name="overall-rating" value="5-star" required>
+                    <!-- all radios' names need be same. Label's for is same as input's id -->
+                    <label for="np">Non Profit (NP)</label>
+                    <input type="radio" id="np" name="membership-level" value="np" required>
+                    <label for="bronze">Bronze</label>
+                    <input type="radio" id="bronze" name="membership-level" value="bronze" required>
+                    <label for="silver">Silver</label>
+                    <input type="radio" id="silver" name="membership-level" value="silver" required>
+                    <label for="gold">Gold</label>
+                    <input type="radio" id="gold" name="membership-level" value="gold" required>
                 </div>
 
-                <label class="top-label" for="date-of-installation">Date of Installation</label>
-                <input type="date" id="date-of-installation" name="date-of-installation" required>
+                <label class="top-label" for="organization-description">Organization Description (Optional)</label>
+                <textarea id="organization-description" name="organization-description" rows="10" title="Write a description of your organization here."></textarea>  <!-- need add attribute cols? -->
 
-                <p>Which features did you find useful in the product?<br>(Check all that apply)</p> <!-- Or a p element? -->
-                <div class="checkbox">
-                    <div class="feat1">
-                        <input type="checkbox" id="feature1" name="feature1" value="Durability">
-                        <label for="feature1">Durability</label><br>
-                    </div>
-                    <div class="feat2">
-                        <input type="checkbox" id="feature2" name="feature2" value="Ease-of-Use">
-                        <label for="feature2">Ease of Use</label><br>
-                    </div>
-                    <div class="feat3">
-                        <input type="checkbox" id="feature3" name="feature3" value="Performance">
-                        <label for="feature3">Performance</label><br>
-                    </div>
-                    <div class="feat4">
-                        <input type="checkbox" id="feature4" name="feature4" value="Design">
-                        <label for="feature4">Design</label><br>
-                    </div>
-                </div>
+                <!-- timestamp, hidden type, current date and time form loaded by user -->
+                <input type="hidden" name="timestamp" id="timestamp">
 
-                <label class="top-label" for="written-review">Written Review (Optional)</label>
-                <textarea id="written-review" name="written-review" rows="10"></textarea>  <!-- need add attributes rows and cols? -->
-
-                <label class="top-label" for="user-name">Your Name (Optional)</label>
-                <input type="text" id="user-name" name="user-name">
-
-                <input type="submit" id="submit" value="Send Review">
+                <input type="submit" id="submit" value="Join the Chamber">
             </form>
 
             <div class="view-options">
