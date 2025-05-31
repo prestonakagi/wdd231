@@ -46,52 +46,63 @@
             <h1>Join</h1>
             <!-- Form -->
             <form class="form" method="get" action="thankyou.html" id="form">
-                <label class="top-label" for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" title="Enter your first name here." autocomplete="on" required>
-                <label class="top-label" for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" title="Enter your last name here." autocomplete="on" required>
-
-                <!-- organizational title -->
-                <label class="top-label" for="org-title">Organizational Title</label>
-                <input type="text" id="org-title" name="org-title" title="Enter your title in your organization here." autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
-                <!-- pattern above is for minimum 7 characters, accept alpha characters, hyphens, and spaces -->
-
-                <label class="top-label" for="email">Email</label>
-                <input type="email" id="email" name="email" title="Enter your email here." autocomplete="on" placeholder="example@exampledomain.com" required>
+                <h2 id="form-heading">Membership Application Form</h2>
                 
-                <label class="top-label" for="phone">Mobile Phone</label>
-                <input type="tel" id="phone" name="phone" title="Enter your mobile phone number here." autocomplete="on" required>
+                <div id="left-column">
+                    <label class="top-label" for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" title="Enter your first name here." autocomplete="on" required>
+                    <label class="top-label" for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" title="Enter your last name here." autocomplete="on" required>
 
-                <label class="top-label" for="org-name">Organization's Name</label>
-                <input type="text" id="org-name" name="org-name" title="Enter the name of your organization here." autocomplete="organization" required>                
+                    <!-- organizational title -->
+                    <label class="top-label" for="org-title">Organizational Title</label>
+                    <input type="text" id="org-title" name="org-title" title="Enter your title in your organization here." autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}">
+                    <!-- pattern above is for minimum 7 characters, accept alpha characters, hyphens, and spaces -->
 
-                <p>Select a Membership Level</p>
-                <div class="radio">
-                    <!-- all radios' names need be same. Label's for is same as input's id -->
-                    <label for="np">Non Profit (NP)</label>
-                    <input type="radio" id="np" name="membership-level" value="np" required>
-                    <label for="bronze">Bronze</label>
-                    <input type="radio" id="bronze" name="membership-level" value="bronze" required>
-                    <label for="silver">Silver</label>
-                    <input type="radio" id="silver" name="membership-level" value="silver" required>
-                    <label for="gold">Gold</label>
-                    <input type="radio" id="gold" name="membership-level" value="gold" required>
+                    <label class="top-label" for="email">Email</label>
+                    <input type="email" id="email" name="email" title="Enter your email here." autocomplete="on" placeholder="example@exampledomain.com" required>
+                    
+                    <label class="top-label" for="phone">Mobile Phone</label>
+                    <input type="tel" id="phone" name="phone" title="Enter your mobile phone number here." autocomplete="on" required>
+
+                    <label class="top-label" for="org-name">Organization's Name</label>
+                    <input type="text" id="org-name" name="org-name" title="Enter the name of your organization here." autocomplete="organization" required>
+
+                    <label class="top-label" for="organization-description">Organization Description (Optional)</label>
+                    <textarea id="organization-description" name="organization-description" rows="10" title="Write a description of your organization here."></textarea>  <!-- need add attribute cols? -->
+
+                    <!-- timestamp, hidden type, current date and time form loaded by user -->
+                    <input type="hidden" name="timestamp" id="timestamp">
+
+                    <input type="submit" id="submit" value="Join the Chamber">
                 </div>
 
-                <label class="top-label" for="organization-description">Organization Description (Optional)</label>
-                <textarea id="organization-description" name="organization-description" rows="10" title="Write a description of your organization here."></textarea>  <!-- need add attribute cols? -->
-
-                <!-- timestamp, hidden type, current date and time form loaded by user -->
-                <input type="hidden" name="timestamp" id="timestamp">
-
-                <input type="submit" id="submit" value="Join the Chamber">
+                <h2 id="membership-heading">Select a Membership Level</h2>
+                <!-- <p>Select a Membership Level</p> -->
+                <div class="radio">
+                    <!-- all radios' names need be same. Label's for is same as input's id -->
+                    <label for="np" id="np-label">
+                        Non Profit Membership Level
+                        <button class="learn-more">Learn More</button>
+                    </label>
+                    <input type="radio" id="np" name="membership-level" value="np" required>
+                    <label for="bronze" id="bronze-label">
+                        Bronze Membership Level
+                        <button class="learn-more">Learn More</button>
+                    </label>
+                    <input type="radio" id="bronze" name="membership-level" value="bronze" required>
+                    <label for="silver" id="silver-label">
+                        Silver Membership Level
+                        <button class="learn-more">Learn More</button>
+                    </label>
+                    <input type="radio" id="silver" name="membership-level" value="silver" required>
+                    <label for="gold" id="gold-label">
+                        Gold Membership Level
+                        <button class="learn-more">Learn More</button>
+                    </label>
+                    <input type="radio" id="gold" name="membership-level" value="gold" required>
+                </div>
             </form>
-
-            <div class="view-options">
-                <button id="grid">Grid</button>
-                <button id="list">List</button>
-            </div>
-            <span id="members" class="grid"></span> <!-- TODO: show 3 company spotlights -->
         </main>
         <footer>
             <span id="address-contact"></span>

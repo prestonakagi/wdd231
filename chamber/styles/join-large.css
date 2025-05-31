@@ -447,10 +447,6 @@ footer {
     }
 
     main {
-        display: grid;
-        grid-template-rows: 1fr 50px 50px 1fr 50px 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
         height: auto;
     }
 
@@ -492,13 +488,17 @@ footer {
     }
     
     .form {
-        display: flex;
+        display: grid;
+        grid-template-rows: 50px 1fr;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        /* display: flex;
         flex-direction: column;
         background-color: lightgray;
-        padding: 10px;
+        padding: 10px; */
     }
     
-    label, p, h2, .feat1, .feat2, .feat3, .feat4, button {
+    label, form p, button {
         padding-top: 1rem;
     }
     
@@ -506,22 +506,113 @@ footer {
         padding-bottom: 0.25rem;
     }
     
-    .radio {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: repeat(5, 1fr);
-        justify-items: center;
-    }
-    
-    .radio label {
+    #form-heading {
         grid-row: 1 / 2;
-        grid-template-columns: 1 / 6;
+        grid-column: 1 / 2;
+    }
+
+    #left-column {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #membership-heading {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+    }
+
+    .radio {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 40px 1fr;
+        align-items: center;
+        /* justify-items: center; */
+        column-gap: 10px;
+    }
+
+    #np-label {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+        justify-self: left;
+        /* text-align: center; */
+        align-self: center;
     }
     
-    .radio input {
-        grid-row: 2 / 3;
-        grid-template-columns: 1 / 6;
+    #np {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        justify-self: right;
     }
+
+    #bronze-label {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        justify-self: left;
+    }
+    
+    #bronze {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        justify-self: right;
+    }
+
+    #silver-label {
+        grid-row: 3 / 4;
+        grid-column: 2 / 3;
+        justify-self: left;
+    }
+    
+    #silver {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+        justify-self: right;
+    }
+
+    #gold-label {
+        grid-row: 4 / 5;
+        grid-column: 2 / 3;
+        justify-self: left;
+    }
+    
+    #gold {
+        grid-row: 4 / 5;
+        grid-column: 1 / 2;
+        justify-self: right;
+    }
+
+    /* .radio label styles for card */
+    .radio label {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--primary-color);
+        padding: 10px;
+        border-radius: var(--rounded-corners);
+        border: 1px solid var(--text-color1);
+        width: 100%;
+        justify-self: center;
+        /* justify-content: space-around; */
+        text-align: center;
+        /* TODO: How put some (vertical) space btwn words and button */
+    }
+
+    .learn-more {
+        background-color: var(--secondary-color);
+        color: var(--text-color2);
+        border-radius: var(--rounded-corners);
+        padding: 5px;
+        width: 33%;
+        align-self: center;
+    }
+    
+    /*.radio input {
+        grid-row: 1 / 5;
+        grid-template-columns: 1 / 2;
+    } */
     
     .checkbox {
         display: flex;
@@ -534,7 +625,9 @@ footer {
     }
     
     .form input[type="date"],
-    .form input[type="text"],
+    .form input[type="text"], 
+    .form input[type="email"], 
+    .form input[type="tel"],
     .form select,
     .form textarea {
         background-color: white;
