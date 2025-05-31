@@ -63,5 +63,41 @@
 "tagLine": "Serving Deliciousness Daily", 
 "email": "ballardsiceberg@gmail.com"
 }
-]
+], 
+
+"np": 
+{"level": 1,  
+"publications": ["Chamber Monthly Newsletter"], 
+"socialMedia": ["Chamber of Commerce website"], 
+"luncheons": "None", 
+"sponsorships": 0, 
+"fee": 0
+}, 
+
+"bronze": 
+{"level": 1.5,  
+"publications": ["Chamber Monthly Newsletter"], 
+"socialMedia": ["Chamber of Commerce website", "Facebook"], 
+"luncheons": "Once a month", 
+"sponsorships": 0, 
+"fee": 5
+}, 
+
+"silver": 
+{"level": 2,  
+"publications": ["Chamber Monthly Newsletter", "Draper Journal"], 
+"socialMedia": ["Chamber of Commerce website", "Facebook", "Instagram"], 
+"luncheons": "Twice a month", 
+"sponsorships": 1, 
+"fee": 10
+}, 
+
+"gold": 
+{"level": 3,  
+"publications": ["Chamber Monthly Newsletter", "Draper Journal", "Salt Lake County Journal"], 
+"socialMedia": ["Chamber of Commerce website", "Facebook", "Instagram", "Tic Tok"], 
+"luncheons": "Three times a month", 
+"sponsorships": 2, 
+"fee": 20
+}
 }
