@@ -66,7 +66,8 @@
 ], 
 
 "np": 
-{"level": 1,  
+{"name": "Non Profit Membership", 
+"level": 1,  
 "publications": ["Chamber Monthly Newsletter"], 
 "socialMedia": ["Chamber of Commerce website"], 
 "luncheons": "None", 
@@ -75,7 +76,8 @@
 }, 
 
 "bronze": 
-{"level": 1.5,  
+{"name": "Bronze Membership", 
+"level": 1.5,  
 "publications": ["Chamber Monthly Newsletter"], 
 "socialMedia": ["Chamber of Commerce website", "Facebook"], 
 "luncheons": "Once a month", 
@@ -84,7 +86,8 @@
 }, 
 
 "silver": 
-{"level": 2,  
+{"name": "Silver Membership", 
+"level": 2,  
 "publications": ["Chamber Monthly Newsletter", "Draper Journal"], 
 "socialMedia": ["Chamber of Commerce website", "Facebook", "Instagram"], 
 "luncheons": "Twice a month", 
@@ -93,7 +96,8 @@
 }, 
 
 "gold": 
-{"level": 3,  
+{"name": "Gold Membership", 
+"level": 3,  
 "publications": ["Chamber Monthly Newsletter", "Draper Journal", "Salt Lake County Journal"], 
 "socialMedia": ["Chamber of Commerce website", "Facebook", "Instagram", "Tic Tok"], 
 "luncheons": "Three times a month", 

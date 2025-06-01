@@ -320,15 +320,15 @@ buttonFour.addEventListener('click', function() {
 
 const membershipDetails = document.getElementById('np-modal');
 
-function displayMembershipDetails(course) {
+function displayMembershipDetails(memberLevel) {
   membershipDetails.innerHTML = '';
   membershipDetails.innerHTML = `
     <button id="closeModal">X</button>
-    <h2>${course.subject} ${course.number}</h2>
-    <h3>${course.title}</h3>
-    <p><strong>Credits</strong>: ${course.certificate}</p>
-    <p>${course.description}</p>
-    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    <h2>${memberLevel.subject} ${memberLevel.number}</h2>
+    <h3>${memberLevel.title}</h3>
+    <p><strong>Credits</strong>: ${memberLevel.certificate}</p>
+    <p>${memberLevel.description}</p>
+    <p><strong>Technologies</strong>: ${memberLevel.technology.join(', ')}</p>
   `;
   membershipDetails.showModal();
 
@@ -340,5 +340,5 @@ function displayMembershipDetails(course) {
 
 const npButton = document.getElementById('np-button');
 npButton.addEventListener("click", () => {
-    displayMembershipDetails
+    displayMembershipDetails(memberLevel);
 })
