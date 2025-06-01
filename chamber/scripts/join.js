@@ -39,13 +39,37 @@ hamButton.addEventListener('click', () => {
 });
 
 
-async function getData() {
+async function getDataNp() {
     const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
     const data = await response.json();
-    console.table(data);
+    // console.table(data);
     //displayCards(data.companies); //references the array not just the overall (single) object.
     displayMembershipDetails(npID, data.np);
-}
+};
+
+async function getDataBronze() {
+    const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
+    const data = await response.json();
+    // console.table(data);
+    //displayCards(data.companies); //references the array not just the overall (single) object.
+    displayMembershipDetails(bronzeID, data.bronze);
+};
+
+async function getDataSilver() {
+    const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
+    const data = await response.json();
+    // console.table(data);
+    //displayCards(data.companies); //references the array not just the overall (single) object.
+    displayMembershipDetails(silverID, data.silver);
+};
+
+async function getDataGold() {
+    const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
+    const data = await response.json();
+    // console.table(data);
+    //displayCards(data.companies); //references the array not just the overall (single) object.
+    displayMembershipDetails(goldID, data.gold);
+};
 
 // look at prophets API assignment for anything else in the getData() function.
 
@@ -84,15 +108,15 @@ buttonFour.addEventListener('click', function() {
 // for dialog windows
 
 const npID = document.getElementById('np-modal');
-const bronzeID = document.getElementById('np-bronze');
-const silverID = document.getElementById('np-silver');
-const goldID = document.getElementById('np-gold');
+const bronzeID = document.getElementById('bronze-modal');
+const silverID = document.getElementById('silver-modal');
+const goldID = document.getElementById('gold-modal');
 
 // use .join(', ') for arrays of strings!
 // need 1st arg for selected ID and 2nd arg = data.specific level.
 
 function displayMembershipDetails(whichModal, memberLevel) {
-  whichModal.innerHTML = '';
+//   whichModal.innerHTML = '';
   whichModal.innerHTML = `
     <button id="closeModal">X</button>
     <h2>${memberLevel.name}</h2>
@@ -106,13 +130,31 @@ function displayMembershipDetails(whichModal, memberLevel) {
   whichModal.showModal();
 
   // To close the modal when click X button
-  closeModal.addEventListener("click", () => {
+    const closeButton = document.getElementById('closeModal');
+
+  closeButton.addEventListener("click", () => {
     whichModal.close();
+    // TODO: first modal can be closed, but 2nd modal opens but cannot be closed on click!
+    // Actually kind of random which modal cannot be closed.
   });
 }
 
 const npButton = document.getElementById('np-button');
 npButton.addEventListener("click", () => {
-    getData();
-    // displayMembershipDetails(memberLevel);
-})
+    getDataNp();
+});
+
+const bronzeButton = document.getElementById('bronze-button');
+bronzeButton.addEventListener("click", () => {
+    getDataBronze();
+});
+
+const silverButton = document.getElementById('silver-button');
+silverButton.addEventListener("click", () => {
+    getDataSilver();
+});
+
+const goldButton = document.getElementById('gold-button');
+goldButton.addEventListener("click", () => {
+    getDataGold();
+});
