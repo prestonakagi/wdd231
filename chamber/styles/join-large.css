@@ -605,8 +605,8 @@ footer {
     }
     
     .form input[type="radio"] {
-        height: 22px;
-        width: 22px;
+        height: 33px;
+        width: 33px;
     }
     
     .form input[type="submit"] {
