@@ -570,6 +570,8 @@ footer {
         text-align: center;
         font-size: 1.5rem;
         /* TODO: How put some (vertical) space btwn words and button */
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        animation: changeColor 1.5s linear; /* spin animation with duration and continuous */
     }
 
     .learn-more {
@@ -664,5 +666,18 @@ footer {
 
     .project-info {
         text-align: left;
+    }
+
+    /* For animation of membership level cards */
+    /* @keyframes needs to be at end of CSS to prevent all rules after it to not be executed. */
+    @keyframes changeColor {
+    0% {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    }
+    100% {
+      background-color: var(--primary-color);
+      color: var(--text-color1);
+    }
     }
 }
