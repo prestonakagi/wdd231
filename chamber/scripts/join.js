@@ -39,258 +39,22 @@ hamButton.addEventListener('click', () => {
 });
 
 
-const cards = document.querySelector('#members');
-
 async function getData() {
     const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
     const data = await response.json();
-    // console.table(data);
-    displayCards(data.companies); //references the array not just the overall (single) object.
+    console.table(data);
+    //displayCards(data.companies); //references the array not just the overall (single) object.
+    displayMembershipDetails(npID, data.np);
 }
 
 // look at prophets API assignment for anything else in the getData() function.
 
-getData();
-
-const displayCards = (companies) => {
-    let filteredCompanies = companies.filter(co => co.level > 1);
-    let shuffledFiltered = filteredCompanies.sort(() => Math.random() - 0.5);
-    let randomFiltered = shuffledFiltered.slice(0, 3); // select 3 random elements from array, and returns an array. Selection changes each time page is loaded.
-    
-    randomFiltered.forEach((company) => {
-    let card = document.createElement("section");
-    let name = document.createElement("h2");
-    let businessTagLine = document.createElement("p"); //need put some info in JSON
-    let address = document.createElement("p");
-    let email = document.createElement("p");
-    let phone = document.createElement("p");
-    let url = document.createElement("p");
-    let level = document.createElement("p");
-    let icon = document.createElement("img");
-
-    name.innerText = `${company.name}`;
-    name.setAttribute("class", "co-name");
-    businessTagLine.innerText = `${company.tagLine}`;
-    businessTagLine.setAttribute("class", "co-tag");
-    address.innerText = `ADDRESS: ${company.address}`;
-    address.setAttribute("class", "co-address");
-    email.innerText = `EMAIL: ${company.email}`;
-    email.setAttribute("class", "co-email");
-    phone.innerText = `PHONE: ${company.phone}`;
-    phone.setAttribute("class", "co-phone");
-    url.innerText = `URL: ${company.website}`;
-    url.setAttribute("class", "co-url");
-    level.innerText = `Level: ${company.level}`;
-    level.setAttribute("class", "co-level");
-
-    icon.setAttribute("src", company.icon);
-    icon.setAttribute("alt", `Icon of ${company.name}`);
-    icon.setAttribute("loading", "lazy");
-    //icon.setAttribute("width", "340");
-    //icon.setAttribute("height", "440");
-    
-    card.appendChild(name);
-    card.appendChild(businessTagLine);
-    card.appendChild(address);
-    card.appendChild(email);
-    card.appendChild(phone);
-    card.appendChild(url);
-    card.appendChild(level);
-    card.appendChild(icon);
-
-    cards.appendChild(card);
-    });
-}
+// getData();
 
 
-// buttons switch company cards grid and list
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
-
-gridButton.addEventListener("click", () => {
-	cards.classList.remove("grid");
-    cards.classList.add("grid");
-	cards.classList.remove("list");
-});
-
-listButton.addEventListener("click", () => {
-	cards.classList.add("list");
-	cards.classList.remove("grid");
-});
-
-
-// chamber's contact info
-const chamberContact = {title: "Draper Chamber of Commerce", street: "123 E 45678 S", city: "Draper, Utah 84020", email: "info@drapercc.org", phone: "(801) 333-4444"}
-
-const contactInfo = document.querySelector('#address-contact');
-
-// for (let i = 0; i < chamberContact.length; i++) {
-//     let pToAdd = document.createElement("p");
-//     let info = chamberContact[i];
-//     pToAdd.innerText = info;
-//     contactInfo.appendChild(pToAdd);
-// }
-
-const ctitle = document.createElement("p");
-const cstreet = document.createElement("p");
-const ccity = document.createElement("p");
-const cemail = document.createElement("p");
-const cphone = document.createElement("p");
-
-ctitle.innerText = `${chamberContact["title"]}`;
-cstreet.innerText = `${chamberContact["street"]}`;
-ccity.innerText = `${chamberContact["city"]}`;
-cemail.innerText = `${chamberContact["email"]}`;
-cphone.innerText = `${chamberContact["phone"]}`;
-
-contactInfo.appendChild(ctitle);
-contactInfo.appendChild(cstreet);
-contactInfo.appendChild(ccity);
-contactInfo.appendChild(cemail);
-contactInfo.appendChild(cphone);
-
-
-const testArray = ["first", "second", "third", "fourth", "fifth"];
-
-const shuffled = testArray.sort(() => Math.random() - 0.5);
-const randomSelection = shuffled.slice(0, 3); // select 3 random elements from array, and returns an array. Selection changes each time page is loaded.
-console.log(randomSelection);
-
-// weather API. Need current temp and weather description, and 3 day temp forecast.
-// description should include cloudiness, high, low, humidity, sunrise time and sunset time.
-const currentDescription = document.querySelector('#current');
-const weatherIcon = document.querySelector('#weather-icon');
-
-// https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
-const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?lat=40.52&lon=-111.86&units=imperial&appid=cc7252cbfcb57d0a8dcd1a1bfbab9acb';
-// https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-const urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?lat=40.52&lon=-111.86&units=imperial&appid=cc7252cbfcb57d0a8dcd1a1bfbab9acb';
-
-
-async function apiFetch() {
-    try {
-        const response = await fetch(urlWeather);
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data); // testing only
-            displayResults(data); // uncomment when ready (this is from the learning activity)
-        } else {
-            throw Error(await response.text());
-        }
-    } catch (error) {
-        console.log(error);
-    }
-
-    try {
-        const responseForecast = await fetch(urlForecast);
-        if (responseForecast.ok) {
-            const dataForecast = await responseForecast.json();
-            console.log(dataForecast); // testing only
-            displayForecast(dataForecast);
-        } else {
-            throw Error(await response.text());
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-apiFetch();
-
-function displayResults(data) {
-    let temp = document.createElement("p");
-    let cloudiness = document.createElement("p");
-    let high = document.createElement("p");
-    let low = document.createElement("p");
-    let humidity = document.createElement("p");
-    let sunrise = document.createElement("p");
-    let sunset = document.createElement("p");
-    
-    temp.innerText = `${Math.round(data.main.temp)}°F`;
-    cloudiness.innerText = `${data.weather[0].description}`;
-    high.innerText = `High: ${Math.round(data.main.temp_max)}°F`;
-    low.innerText = `Low: ${Math.round(data.main.temp_min)}°F`;
-    humidity.innerText = `Humidity: ${data.main.humidity}%`;
-    // how convert the sunrise and sunset integers to times am and pm?
-    let timeSunrise = data.sys.sunrise;
-    let dateSunrise = new Date(timeSunrise*1000);
-    // Hours part from the timestamp
-    let hoursSunrise = dateSunrise.getHours();
-
-    // Minutes part from the timestamp
-    let minutesSunrise = "0" + dateSunrise.getMinutes();
-
-    // Seconds part from the timestamp
-    // let secondsSunrise = "0" + dateSunrise.getSeconds();
-
-    // Will display time in 10:30:23 format
-    let formattedTimeSunrise = hoursSunrise + ':' + minutesSunrise.substr(-2);
-
-    let timeSunset = data.sys.sunset;
-    let dateSunset = new Date(timeSunset*1000);
-    // Hours part from the timestamp
-    let hoursSunset = dateSunset.getHours();
-
-    // Minutes part from the timestamp
-    let minutesSunset = "0" + dateSunset.getMinutes();
-
-    // Seconds part from the timestamp
-    // let secondsSunset = "0" + dateSunset.getSeconds();
-
-    // Will display time in 10:30:23 format
-    let formattedTimeSunset = hoursSunset + ':' + minutesSunset.substr(-2);
-
-    sunrise.innerText = `Sunrise (24 hr): ${formattedTimeSunrise}`;
-    sunset.innerText = `Sunset (24 hr): ${formattedTimeSunset}`;
-
-    currentDescription.appendChild(temp);
-    currentDescription.appendChild(cloudiness);
-    currentDescription.appendChild(high);
-    currentDescription.appendChild(low);
-    currentDescription.appendChild(humidity);
-    currentDescription.appendChild(sunrise);
-    currentDescription.appendChild(sunset);
-
-    let iconCode = data.weather[0].icon;
-    let weatherIconImage = document.createElement("img");
-    weatherIconImage.setAttribute('src', `https://openweathermap.org/img/wn/${iconCode}@2x.png`);
-    // not sure if above url is `https://openweathermap.org/img/w/${iconCode}@2x.png` or without @2x too.
-    weatherIconImage.setAttribute('alt', `${data.weather[0].description}`);
-    weatherIconImage.setAttribute('loading', 'lazy');
-    weatherIcon.appendChild(weatherIconImage);
-}
-
-
-const spanForecast = document.querySelector('.forecast');
-
-// need add displayForecast(data) in to DisplayResults function.
-function displayForecast(data) {
-    let today = document.createElement("p");
-    let tomorrow = document.createElement("p");
-    let nextDay = document.createElement("p");
-    
-    // indexes 5, 13, 21
-    today.innerText = `Today: ${Math.round(data.list[5].main.temp_max)}°F`;
-    tomorrow.innerText = `Tomorrow: ${Math.round(data.list[13].main.temp_max)}°F`;
-    nextDay.innerText = `Day After Tomorrow: ${Math.round(data.list[21].main.temp_max)}°F`;
-    
-    spanForecast.appendChild(today);
-    spanForecast.appendChild(tomorrow);
-    spanForecast.appendChild(nextDay);
-}
-
-
-// join button on click to go to Join page
-
-document.getElementById('join').addEventListener('click', function() {
-    window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/join.html'; // directory page to test. And it worked!
-  });
-
-
-  // top navigation buttons on click to go to respective link AND put wayfinder.
+// top navigation buttons on click to go to respective link AND put wayfinder.
 
 const buttonOne = document.getElementById("button1");
-buttonOne.classList.add('wayfinder');
 
 buttonOne.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber';
@@ -303,6 +67,7 @@ buttonTwo.addEventListener('click', function() {
 });
 
 const buttonThree = document.getElementById("button3");
+buttonThree.classList.add('wayfinder');
 
 buttonThree.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/join.html';
@@ -318,27 +83,36 @@ buttonFour.addEventListener('click', function() {
 // only way to close modal is to click top right X button
 // for dialog windows
 
-const membershipDetails = document.getElementById('np-modal');
+const npID = document.getElementById('np-modal');
+const bronzeID = document.getElementById('np-bronze');
+const silverID = document.getElementById('np-silver');
+const goldID = document.getElementById('np-gold');
 
-function displayMembershipDetails(memberLevel) {
-  membershipDetails.innerHTML = '';
-  membershipDetails.innerHTML = `
+// use .join(', ') for arrays of strings!
+// need 1st arg for selected ID and 2nd arg = data.specific level.
+
+function displayMembershipDetails(whichModal, memberLevel) {
+  whichModal.innerHTML = '';
+  whichModal.innerHTML = `
     <button id="closeModal">X</button>
-    <h2>${memberLevel.subject} ${memberLevel.number}</h2>
-    <h3>${memberLevel.title}</h3>
-    <p><strong>Credits</strong>: ${memberLevel.certificate}</p>
-    <p>${memberLevel.description}</p>
-    <p><strong>Technologies</strong>: ${memberLevel.technology.join(', ')}</p>
+    <h2>${memberLevel.name}</h2>
+    <h3>Level: ${memberLevel.level}</h3>
+    <p><strong>Publications</strong>: ${memberLevel.publications.join(', ')}</p>
+    <p><strong>Social Media</strong>: ${memberLevel.socialMedia.join(', ')}</p>
+    <p><strong>Luncheons</strong>: ${memberLevel.luncheons}</p>
+    <p><strong>Number of Sponsorships</strong>: ${memberLevel.sponsorships}</p>
+    <p><strong>Fee</strong>: $${memberLevel.fee} per month</p>
   `;
-  membershipDetails.showModal();
+  whichModal.showModal();
 
   // To close the modal when click X button
   closeModal.addEventListener("click", () => {
-    membershipDetails.close();
+    whichModal.close();
   });
 }
 
 const npButton = document.getElementById('np-button');
 npButton.addEventListener("click", () => {
-    displayMembershipDetails(memberLevel);
+    getData();
+    // displayMembershipDetails(memberLevel);
 })
