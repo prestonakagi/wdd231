@@ -159,156 +159,178 @@ header {
     text-align: left;
 }
 
-.hero img {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-#ticket {
-    background-color: var(--primary-color);
-    border: solid 2px var(--text-color1);
-    height: 50px;
-    border-radius: var(--rounded-corners);
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 50%;
-    right: 10%;
-}
-
-#ticket:hover {
-/* different background color (and text color) or border (different colored) */
-background-color: var(--secondary-color);
-color: var(--text-color2);  
-}
-
-.current {
-    grid-row: 4 / 5;
-    grid-column: 2 / 3;
-    background-color: tan;
-    display: grid;
-    grid-template-rows: 1fr;
+.form {
+    /* display: grid;
+    grid-template-rows: 50px 1fr;
     grid-template-columns: 1fr 1fr;
+    column-gap: 20px; */
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightgray; */
+    padding: 10px;
+    /* border: 1px solid var(--text-color1); */
 }
-#current {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
+
+label, form p, button {
+    padding-top: 1rem;
+    font-family: "Source Sans 3", serif; /* This font was a custom made font. */
+    font-weight: 350;
+    font-style: normal;
+    color: black;
+    /* color: var(--text-color1); */
+    padding: 10px;
 }
-#weather-icon {
+
+.top-label {
+    padding-bottom: 0.25rem;
+}
+
+#form-heading {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
 }
-
-.view-options {
-    grid-row: 5 / 6;
-    grid-column: 1 / 4;
-    justify-self: center;
-}
-.view-options button {
-    padding: 10px;
-    width: 100px;
-    height: auto;
-}
-#grid {
-    background-color: var(--primary-color);
-}
-#grid:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color2);  
-}
-#list {
-    background-color: var(--primary-color);
-}
-#list:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color2);  
-}
-
- /* to show members as a grid */
-.grid {
-    display: flex;
-    flex-direction: column;
-    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-    gap: 20px;
-    max-width: 100%;
-}
-/* to show members as a list */
-.list {
-    display: flex;
-    flex-direction: column;
-    /* gap: 20px; */
-    max-width: 100%;
-}
-/* zebra striped list display */
-.list section {
-    display: flex;
-    justify-content: space-around;
-    text-align: left;
-    background-color: beige;
-    max-width: 100%;
-    flex-wrap: wrap;
-}
-.list section:nth-child(even), .list section:nth-child(even) h2 {
-    background-color: var(--primary-color);
-}
-.list section img {
-    display: none;
-}
-/* cards displayed in grid */
-.grid section {
-    background-color: beige;
-    display: grid;
-    grid-template-rows: 20px repeat(5, 50px);
-    grid-template-columns: 1fr 2fr;
-    gap: 5px;
-    align-items: center;
-    height: auto;
-    max-width: 100%;
-    /* width: 400px; */
-    padding: 10px;
-}
-
-.grid section h2 {
-    /* width: 100%; did not work*/
-    /* max-width: 100%; did not work*/
-    width: max-content;
-    height: 100%;
-    text-align: center;
-    justify-content: center;
-}
-
-.co-name {
-    background-color: beige;
-    color: var(--text-color1);
-    grid-row: 1 / 2;
-    grid-column: 1 / 3;
-}
-.co-tag {
+#left-column {
     grid-row: 2 / 3;
-    grid-column: 1 / 3;
-    text-align: center;
+    grid-column: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
 }
-.co-address {
+#membership-heading {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+.radio {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    /* justify-items: center; */
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 10px;
+}
+#np-label {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    justify-self: left;
+    /* text-align: center; */
+    align-self: center;
+}
+
+#np {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    justify-self: right;
+}
+#bronze-label {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+    justify-self: left;
+}
+
+#bronze {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    justify-self: right;
+}
+#silver-label {
     grid-row: 3 / 4;
     grid-column: 2 / 3;
+    justify-self: left;
 }
-.co-email {
+
+#silver {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2;
+    justify-self: right;
+}
+#gold-label {
     grid-row: 4 / 5;
     grid-column: 2 / 3;
+    justify-self: left;
 }
-.co-phone {
+
+#gold {
+    grid-row: 4 / 5;
+    grid-column: 1 / 2;
+    justify-self: right;
+}
+/* .radio label styles for card */
+.radio label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--primary-color);
+    padding: 40px 10px;
+    border-radius: var(--rounded-corners);
+    border: 1px solid var(--text-color1);
+    width: 100%;
+    justify-self: center;
+    /* justify-content: space-around; */
+    text-align: center;
+    font-size: 1.5rem;
+    /* TODO: How put some (vertical) space btwn words and button */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: changeColor 1s linear; /* spin animation with duration and continuous */
+}
+.learn-more {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    border: 1px solid var(--text-color2);
+    border-radius: var(--rounded-corners);
+    padding: 5px;
+    width: 33%;
+    align-self: center;
+    font-size: 1.1rem;
+}
+
+/*.radio input {
+    grid-row: 1 / 5;
+    grid-template-columns: 1 / 2;
+} */
+
+
+.form input[type="date"],
+.form input[type="text"], 
+.form input[type="email"], 
+.form input[type="tel"],
+.form textarea {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 6px;
+    padding: 1rem;
+    color: gray;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form input[type="radio"] {
+    height: 33px;
+    width: 33px;
+}
+
+.form input[type="submit"] {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    border-radius: var(--rounded-corners);
+    border: 1px solid var(--text-color2);
+    /* border: none;
+    border-radius: 6px; */
+    padding: 1rem;
+    width: 99%;
+    max-width: 400px;
+    margin: 1rem 1% 2rem 0;
+    font-size: 1.1rem;
     grid-row: 5 / 6;
     grid-column: 2 / 3;
 }
-.co-url {
-    grid-row: 6 / 7;
-    grid-column: 2 / 3;
-}
-section img {
-    grid-row: 3 / 7;
-    grid-column: 1 / 2;
-    width: 100px;
-    height: auto;
+
+.form input[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color1);
 }
 
 footer {
@@ -502,6 +524,7 @@ footer {
         align-items: center;
         /* justify-items: center; */
         column-gap: 10px;
+        row-gap: 10px;
         padding: 10px;
     }
 
@@ -571,12 +594,13 @@ footer {
         font-size: 1.5rem;
         /* TODO: How put some (vertical) space btwn words and button */
         /* animation: name duration timing-function delay iteration-count direction fill-mode; */
-        animation: changeColor 1.5s linear; /* spin animation with duration and continuous */
+        animation: changeColor 1s linear; /* spin animation with duration and continuous */
     }
 
     .learn-more {
         background-color: var(--secondary-color);
         color: var(--text-color2);
+        border: 1px solid var(--text-color2);
         border-radius: var(--rounded-corners);
         padding: 5px;
         width: 33%;
@@ -610,9 +634,10 @@ footer {
     }
     
     .form input[type="submit"] {
-        background-color: var(--primary-color);
+        background-color: var(--secondary-color);
+        color: var(--text-color2);
         border-radius: var(--rounded-corners);
-        border: 1px solid var(--text-color1);
+        border: 1px solid var(--text-color2);
         /* border: none;
         border-radius: 6px; */
         padding: 1rem;
@@ -623,8 +648,8 @@ footer {
     }
     
     .form input[type="submit"]:hover {
-        background-color: var(--secondary-color);
-        color: var(--text-color2);
+        background-color: var(--primary-color);
+        color: var(--text-color1);
     }
 
     footer {

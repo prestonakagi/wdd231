@@ -39,6 +39,37 @@ hamButton.addEventListener('click', () => {
 });
 
 
+// chamber's contact info
+const chamberContact = {title: "Draper Chamber of Commerce", street: "123 E 45678 S", city: "Draper, Utah 84020", email: "info@drapercc.org", phone: "(801) 333-4444"}
+
+const contactInfo = document.querySelector('#address-contact');
+
+// for (let i = 0; i < chamberContact.length; i++) {
+//     let pToAdd = document.createElement("p");
+//     let info = chamberContact[i];
+//     pToAdd.innerText = info;
+//     contactInfo.appendChild(pToAdd);
+// }
+
+const ctitle = document.createElement("p");
+const cstreet = document.createElement("p");
+const ccity = document.createElement("p");
+const cemail = document.createElement("p");
+const cphone = document.createElement("p");
+
+ctitle.innerText = `${chamberContact["title"]}`;
+cstreet.innerText = `${chamberContact["street"]}`;
+ccity.innerText = `${chamberContact["city"]}`;
+cemail.innerText = `${chamberContact["email"]}`;
+cphone.innerText = `${chamberContact["phone"]}`;
+
+contactInfo.appendChild(ctitle);
+contactInfo.appendChild(cstreet);
+contactInfo.appendChild(ccity);
+contactInfo.appendChild(cemail);
+contactInfo.appendChild(cphone);
+
+
 async function getDataNp() {
     const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
     const data = await response.json();

@@ -12,8 +12,14 @@ console.log(myInfo);
 // console.log(myInfo.get('phone'));
 // console.log(myInfo.get('email'));
 
+// format hidden type for timestamp
+const dateObj = new Date(myInfo.get('timestamp'));
+const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+const formattedDate = dateObj.toLocaleString('en-US', options);
+
+
 document.querySelector('#results').innerHTML = `
-<p>Appointment for ${myInfo.get('first')} ${myInfo.get('last')}</p>
-<p>Proxy ${myInfo.get('ordinance')} on ${myInfo.get('date')} in the ${myInfo.get('location')} Temple</p>
-<p>Your Phone: ${myInfo.get('phone')}</p>
-<p>Your email is ${myInfo.get('email')}</p>`
+<p>${formattedDate}</p>
+<p>Thank you, ${myInfo.get('first-name')} ${myInfo.get('last-name')} from ${myInfo.get('org-name')}, for joining the Draper Chamber of Commerce at the ${myInfo.get('membership-level')} membership level!</p>
+<p>Your phone number is ${myInfo.get('phone')}.</p>
+<p>Your email is ${myInfo.get('email')}.</p>`
