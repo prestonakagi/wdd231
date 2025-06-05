@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Directory Chamber of Commerce</title>
+        <meta name="description" content="Chamber of Commerce Directory Page">
+        <meta name="author" content="Preston Akagi">
+        <!-- Open Graph meta properties -->
+        <meta property="og:title" content="Chamber of Commerce Directory Page PA">
+        <meta property="og:description" content="Directory of company members of Chamber of Commerce Draper WDD231 project.">
+        <meta property="og:image" content="https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/images/og-image-directory.webp">
+        <meta property="og:url" content="https://prestonakagi.github.io/wdd231/chamber/directory.html">
+        <meta property="og:type" content="website">
+        <!-- favicon -->
+        <link rel="icon" href="images/commerce-tree-favicon.ico">
+        <!--Google Fonts links start-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@350&display=swap" rel="stylesheet">
+        <!--Google Fonts links end-->
+        <link rel="stylesheet" href="styles/small.css">
+        <link rel="stylesheet" href="styles/large.css">
+        <script src="scripts/directory.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="images/commerce-tree-svg.svg" alt="green tree favicon" loading="lazy">
+            <div class="top-title">
+                <h2 class="top-heading">Draper</h2>
+                <p>Chamber of Commerce</p>
+            </div>
+            <button type="button" id="menu"></button>
+            <nav>
+                <ul class="navigation">
+                    <li class="link1"><button id="button1">Home</button></li>
+                    <li class="link2"><button id="button2">Directory</button></li>
+                    <li class="link3"><button id="button3">Join</button></li>
+                    <li class="link4"><button id="button4">Discover</button></li>
+                    <!-- <li class="link5"><a href="https://www.linkedin.com/" target="_blank">LinkedIn</a></li> -->
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <!-- do the 3 sizes picture element for hero image -->
+            <picture class="hero">
+                <!-- widest to smallest -->
+                <source media="(min-width: 600px)" srcset="images/directory-hero-medium.webp">
+                <img src="images/directory-hero-small.webp" alt="hero image" loading="lazy">
+            </picture>
+            <button id="ticket">Keynote Tickets</button>
+            <h1>Directory</h1>
+            <h2 class="h-events">Events</h2>
+            <section class="events">
+                <ol>
+                    <li>5/27/25 7:00 pm Chamber Meeting</li>
+                    <li>5/28/25 7:00 pm Local Businesses Meet and Greet</li>
+                    <li>6/4/25 10:00 am Weekly Podcast Launches</li>
+                    <li>6/21/25 10:00 am Family Fun Day</li>
+                    <li>6/24/25 7:00 pm Chamber Meeting</li>
+                </ol>
+            </section>
+            <h2 class="h-current">Current Weather</h2>
+            <!-- <section></section> but might be span class="current"-->
+            <section class="current">
+                <span id="current"></span>
+                <!-- <img id="weather-icon" src="" alt="" loading="lazy"> -->
+                <span id="weather-icon"></span>
+            </section>
+            <h2 class="h-forecast">Weather Forecast</h2>
+            <span class="forecast"></span>
+            <div class="view-options">
+                <button id="grid">Grid</button>
+                <button id="list">List</button>
+            </div>
+            <span id="members" class="grid"></span>
+        </main>
+        <footer>
+            <span id="address-contact"></span>
+            <div class="sociallinks">
+                <a href="https://www.facebook.com" target="_blank">
+                    <img src="images/facebook-icon.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <img src="images/instagram-icon.svg" alt="Instagram">
+                </a>
+                <a href="https://www.whatsapp.com" target="_blank">
+                    <img src="images/whatsapp-icon.svg" alt="WhatsApp">
+                </a>
+            </div>
+            <div class="project-info">
+                <p>WDD231 Class Project</p>
+                <p>Preston Akagi</p>
+                <p>©️<span id="currentyear"></span> Draper Chamber of Commerce</p>
+                <p>Last Modification: <span id="lastModified"></span></p>
+            </div>
+        </footer>
+    </body>
+</html>
