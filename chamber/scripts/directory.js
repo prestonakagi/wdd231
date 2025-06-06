@@ -286,5 +286,5 @@ buttonThree.addEventListener('click', function() {
 const buttonFour = document.getElementById("button4");
 
 buttonFour.addEventListener('click', function() {
-    window.location.href = '';
+    window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/discover.html';
 });

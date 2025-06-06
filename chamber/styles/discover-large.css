@@ -159,46 +159,6 @@ header {
     text-align: left;
 }
 
-.hero img {
-    position: relative;
-    width: 100%;
-    height: auto;
-}
-#ticket {
-    background-color: var(--primary-color);
-    border: solid 2px var(--text-color1);
-    height: 50px;
-    border-radius: var(--rounded-corners);
-    text-align: center;
-    padding: 10px;
-    position: absolute;
-    bottom: 50%;
-    right: 10%;
-}
-
-#ticket:hover {
-/* different background color (and text color) or border (different colored) */
-background-color: var(--secondary-color);
-color: var(--text-color2);  
-}
-
-.current {
-    grid-row: 4 / 5;
-    grid-column: 2 / 3;
-    background-color: tan;
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-}
-#current {
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-}
-#weather-icon {
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-}
-
 .view-options {
     grid-row: 5 / 6;
     grid-column: 1 / 4;
@@ -446,95 +406,12 @@ footer {
         background-color: var(--secondary-color);
     }
 
-    main {
+    main { /* TODO: Edit Grid! */
         display: grid;
         grid-template-rows: 1fr 50px 50px 1fr 50px 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
         height: auto;
-    }
-
-    .hero {
-        grid-row: 1 / 2;
-        grid-column: 1 / 4;
-        /* padding-top: 10px; */
-        max-width: 100%;
-        height: auto;
-        /* margin: 0 auto; centers horizontally */
-        justify-self: center;
-    }
-
-    .hero img {
-        position: relative;
-    }
-
-    #ticket {
-        background-color: var(--primary-color);
-        border: solid 2px var(--text-color1);
-        height: 50px;
-        border-radius: var(--rounded-corners);
-        text-align: center;
-        padding: 10px;
-        position: absolute; /* TODO: */
-        bottom: 7%;
-        right: 22%;
-    }
-
-    #ticket:hover {
-    /* different background color (and text color) or border (different colored) */
-    background-color: var(--secondary-color);
-    color: var(--text-color2);  
-    }
-
-    h1 {
-        grid-row: 2 / 3;
-        grid-column: 1 / 4;
-    }
-
-    .h-events {
-        grid-row: 3 / 4;
-        grid-column: 1 / 2;
-    }
-
-    .events {
-        grid-row: 4 / 5;
-        grid-column: 1 / 2;
-        /* background-color: beige; */
-    }
-
-    .h-current {
-        grid-row: 3 / 4;
-        grid-column: 2 / 3;
-    }
-
-    .current {
-        grid-row: 4 / 5;
-        grid-column: 2 / 3;
-        background-color: tan;
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #current {
-        grid-row: 1 / 2;
-        grid-column: 2 / 3;
-    }
-
-    #weather-icon {
-        grid-row: 1 / 2;
-        grid-column: 1 / 2;
-    }
-
-    .h-forecast {
-        grid-row: 3 / 4;
-        grid-column: 3 / 4;
-    }
-
-    .forecast {
-        grid-row: 4 / 5;
-        grid-column: 3 / 4;
-        /* background-color: beige; */
     }
 
     .view-options {

@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Directory Chamber of Commerce</title>
-        <meta name="description" content="Chamber of Commerce Directory Page">
+        <title>Discover Chamber of Commerce</title>
+        <meta name="description" content="Chamber of Commerce Discover Page">
         <meta name="author" content="Preston Akagi">
         <!-- Open Graph meta properties -->
         <meta property="og:title" content="Chamber of Commerce Directory Page PA">
@@ -19,9 +19,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@350&display=swap" rel="stylesheet">
         <!--Google Fonts links end-->
-        <link rel="stylesheet" href="styles/small.css">
-        <link rel="stylesheet" href="styles/large.css">
-        <script src="scripts/directory.js" defer></script>
+        <link rel="stylesheet" href="styles/discover-small.css">
+        <link rel="stylesheet" href="styles/discover-large.css">
+        <script src="scripts/discover.js" defer></script>
     </head>
     <body>
         <header>
@@ -42,33 +42,7 @@
             </nav>
         </header>
         <main>
-            <!-- do the 3 sizes picture element for hero image -->
-            <picture class="hero">
-                <!-- widest to smallest -->
-                <source media="(min-width: 600px)" srcset="images/directory-hero-medium.webp">
-                <img src="images/directory-hero-small.webp" alt="hero image" loading="lazy">
-            </picture>
-            <button id="ticket">Keynote Tickets</button>
-            <h1>Directory</h1>
-            <h2 class="h-events">Events</h2>
-            <section class="events">
-                <ol>
-                    <li>5/27/25 7:00 pm Chamber Meeting</li>
-                    <li>5/28/25 7:00 pm Local Businesses Meet and Greet</li>
-                    <li>6/4/25 10:00 am Weekly Podcast Launches</li>
-                    <li>6/21/25 10:00 am Family Fun Day</li>
-                    <li>6/24/25 7:00 pm Chamber Meeting</li>
-                </ol>
-            </section>
-            <h2 class="h-current">Current Weather</h2>
-            <!-- <section></section> but might be span class="current"-->
-            <section class="current">
-                <span id="current"></span>
-                <!-- <img id="weather-icon" src="" alt="" loading="lazy"> -->
-                <span id="weather-icon"></span>
-            </section>
-            <h2 class="h-forecast">Weather Forecast</h2>
-            <span class="forecast"></span>
+            <h1>Discover</h1>
             <div class="view-options">
                 <button id="grid">Grid</button>
                 <button id="list">List</button>
