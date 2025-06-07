@@ -1,0 +1,67 @@
+/* declaring global variables --variable-name: value;
+calling variable use var(variable-name) */
+:root {
+    --primary-color: lightgreen;
+    --secondary-color: rgb(75, 75, 245);
+    --text-color1: rgb(49, 49, 49);
+    --text-color2: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* h1 font or maybe other headings (h2) also */
+h1 {
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    /* color: black; */
+    color: var(--text-color2);
+    /* color: var(--text-color1); */
+    border-bottom: 2px solid white;
+}
+
+h2 {
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    /* color: black; */
+    color: var(--text-color2);
+    /* color: var(--text-color1); */
+    padding: 10px;
+}
+
+/* normal paragraph font */
+p, li {
+    font-family: "Source Sans 3", serif; /* This font was a custom made font. */
+    font-weight: 350;
+    font-style: normal;
+    color: black;
+    /* color: var(--text-color1); */
+    padding: 10px;
+}
+
+p, li {
+    background-color: var(--primary-color);
+}
+
+h1, h2 {
+    background-color: var(--secondary-color);
+}
+
+.wireframes {
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    background-color: green;
+    width: 500px;
+}
+
+.wf1, .wf2, .wf3, .wf4, .wf5, .wf6, .wf7 {
+    width: 500px;
+    height: auto;
+    padding: 10px;
+}

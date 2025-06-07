@@ -147,7 +147,6 @@ buttonOne.addEventListener('click', function() {
 });
 
 const buttonTwo = document.getElementById("button2");
-buttonTwo.classList.add('wayfinder');
 
 buttonTwo.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/directory.html';
@@ -160,6 +159,7 @@ buttonThree.addEventListener('click', function() {
 });
 
 const buttonFour = document.getElementById("button4");
+buttonFour.classList.add('wayfinder');
 
 buttonFour.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/discover.html';
