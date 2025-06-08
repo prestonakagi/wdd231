@@ -1,5 +1,5 @@
 import {places} from '../data/interests.mjs'
-console.log(places);
+// console.log(places);
 
 // footer year and datetime last modified
 
@@ -45,51 +45,39 @@ async function getData() {
     const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
     const data = await response.json();
     // console.table(data);
-    displayCards(data.companies); //references the array not just the overall (single) object.
+    displayCards(places); //references the array not just the overall (single) object.
 }
 
 // look at prophets API assignment for anything else in the getData() function.
 
 getData();
 
-const displayCards = (companies) => {
-    companies.forEach((company) => {
+const displayCards = (places) => {
+    places.forEach((place) => {
     let card = document.createElement("section");
     let name = document.createElement("h2");
-    let businessTagLine = document.createElement("p"); //need put some info in JSON
     let address = document.createElement("p");
-    let email = document.createElement("p");
-    let phone = document.createElement("p");
-    let url = document.createElement("p");
+    let description = document.createElement("p");
     let icon = document.createElement("img");
 
     // TODO: need change below to match JSON for interest.
         // Keep all classes and their names if can: name, address, icon.
-    name.innerText = `${company.name}`;
+    name.innerText = `${place.name}`;
     name.setAttribute("class", "co-name");
-    businessTagLine.innerText = `${company.tagLine}`;
-    businessTagLine.setAttribute("class", "co-tag");
-    address.innerText = `ADDRESS: ${company.address}`;
+    address.innerText = `ADDRESS: ${place.address}`;
     address.setAttribute("class", "co-address");
-    email.innerText = `EMAIL: ${company.email}`;
-    email.setAttribute("class", "co-email");
-    phone.innerText = `PHONE: ${company.phone}`;
-    phone.setAttribute("class", "co-phone");
-    url.innerText = `URL: ${company.website}`;
-    url.setAttribute("class", "co-url");
+    description.innerText = `${place.description}`;
+    description.setAttribute("class", "co-description");
 
-    icon.setAttribute("src", company.icon);
-    icon.setAttribute("alt", `Icon of ${company.name}`);
+    icon.setAttribute("src", place.photo_url);
+    icon.setAttribute("alt", `Icon of ${place.name}`);
     icon.setAttribute("loading", "lazy");
     //icon.setAttribute("width", "340");
     //icon.setAttribute("height", "440");
     
     card.appendChild(name);
-    card.appendChild(businessTagLine);
     card.appendChild(address);
-    card.appendChild(email);
-    card.appendChild(phone);
-    card.appendChild(url);
+    card.appendChild(description);
     card.appendChild(icon);
 
     cards.appendChild(card);

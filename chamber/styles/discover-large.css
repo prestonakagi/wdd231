@@ -153,12 +153,13 @@
 
     /* cards displayed in grid area .grid section is "base" of card */
     .grid section {
-        background-color: beige;
+        /* background-color: beige; */
+        background-color: lightcoral;
         display: grid;
         grid-template-areas: 
-        "photograph" "name"
-        "photograph" "description"
-        "photograph" "location";
+        "photograph name"
+        "photograph description"
+        "photograph location";
         gap: 5px;
         align-items: center;
         height: auto;

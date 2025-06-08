@@ -209,33 +209,19 @@ header {
     color: var(--text-color1);
     grid-area: name;
 }
-.co-tag {
-    grid-row: 2 / 3;
-    grid-column: 1 / 3;
-    text-align: center;
-}
-/* .co-description {
+
+.co-description {
     background-color: beige;
     color: var(--text-color1);
     grid-area: description;
-} */
+}
+
 .co-address {
     grid-row: 3 / 4;
     grid-column: 2 / 3;
     grid-area: location;
 }
-.co-email {
-    grid-row: 4 / 5;
-    grid-column: 2 / 3;
-}
-.co-phone {
-    grid-row: 5 / 6;
-    grid-column: 2 / 3;
-}
-.co-url {
-    grid-row: 6 / 7;
-    grid-column: 2 / 3;
-}
+
 section img {
     grid-area: photograph;
     width: 100px; /*Should be about 300px wide by 200px height*/
