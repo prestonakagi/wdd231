@@ -1,3 +1,6 @@
+import {places} from '../data/interests.mjs'
+console.log(places);
+
 // footer year and datetime last modified
 
 // select the DOM element for year output
@@ -35,9 +38,10 @@ hamButton.addEventListener('click', () => {
 });
 
 
-const cards = document.querySelector('#members');
+const cards = document.querySelector('#interests');
 
 async function getData() {
+    // TODO: the fetch URL needs to change to correct JSON.
     const response = await fetch('https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/chamber/data/members.json');
     const data = await response.json();
     // console.table(data);
@@ -59,6 +63,8 @@ const displayCards = (companies) => {
     let url = document.createElement("p");
     let icon = document.createElement("img");
 
+    // TODO: need change below to match JSON for interest.
+        // Keep all classes and their names if can: name, address, icon.
     name.innerText = `${company.name}`;
     name.setAttribute("class", "co-name");
     businessTagLine.innerText = `${company.tagLine}`;
@@ -89,22 +95,6 @@ const displayCards = (companies) => {
     cards.appendChild(card);
     });
 }
-
-
-// buttons switch company cards grid and list
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
-
-gridButton.addEventListener("click", () => {
-	cards.classList.remove("grid");
-    cards.classList.add("grid");
-	cards.classList.remove("list");
-});
-
-listButton.addEventListener("click", () => {
-	cards.classList.add("list");
-	cards.classList.remove("grid");
-});
 
 
 // chamber's contact info

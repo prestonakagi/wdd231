@@ -20,8 +20,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@350&display=swap" rel="stylesheet">
         <!--Google Fonts links end-->
         <link rel="stylesheet" href="styles/discover-small.css">
+        <link rel="stylesheet" href="styles/discover-medium.css">
         <link rel="stylesheet" href="styles/discover-large.css">
-        <script src="scripts/discover.js" defer></script>
+        <!-- <script src="scripts/discover.js" type="module"></script> -->
     </head>
     <body>
         <header>
@@ -43,11 +44,7 @@
         </header>
         <main>
             <h1>Discover</h1>
-            <div class="view-options">
-                <button id="grid">Grid</button>
-                <button id="list">List</button>
-            </div>
-            <span id="members" class="grid"></span>
+            <span id="interests" class="grid"></span>
         </main>
         <footer>
             <span id="address-contact"></span>
@@ -69,5 +66,6 @@
                 <p>Last Modification: <span id="lastModified"></span></p>
             </div>
         </footer>
+        <script src="scripts/discover.js" type="module"></script> <!--put the script down here based on teacher's video-->
     </body>
 </html>

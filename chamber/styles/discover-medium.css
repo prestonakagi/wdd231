@@ -1,6 +1,6 @@
+/* Get rid of anything redundant to small CSS */
 
-
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 641px) {
 
     /* TODO: for wider than the small, have medium have all needed rules
     for medium and large views. In large view, just change grid stuff. */
@@ -112,20 +112,20 @@
         grid-row: 6 / 7;
         grid-column: 1 / 4;
         /* max-width: 100%; */
-        /* display: grid;
+        display: grid;
         grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr; */
+        grid-template-columns: 1fr 1fr 1fr;
         /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
         /* gap: 10px; */
     }
 
-    /* to show interests as a grid area */
+    /* to show interests cards as a grid */
     .grid {
-        display: grid;
-        /* grid-template-rows: 1fr 1fr 1fr; Need 4R 2C or 3R 3C for large? */
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
         /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
-        gap: 10px;
+        gap: 20px;
+        max-width: 100%;
     }
 
     /* to show interests as a list */
@@ -164,5 +164,53 @@
         height: auto;
         /* width: 400px; */
         padding: 10px;
+    }
+
+    section img {
+        grid-row: 3 / 7;
+        grid-column: 1 / 2;
+        /*width: 100px;*/ /*Should be about 300px wide by 200px height*/
+        height: auto;
+    }
+
+    footer {
+        background-color: var(--primary-color);
+        max-width: 100%;
+        /* automatically center on the screen horizontally */
+        margin: 0 auto;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #address-contact {
+        text-align: left;
+    }
+
+    .sociallinks {
+        /* background-color: var(--accent1-color); */
+        /* height: 50px; */
+        /* grid-column: 3 / 4; */
+        display: flex;
+        /* column-gap: 10px; */
+        justify-content: end;
+    }
+
+    .sociallinks a {
+        text-decoration: none; /* removes default style of underlines under hyperlinks */
+        width: 40px;
+        justify-self: end;
+        align-content: center;
+    }
+
+    .sociallinks a img {
+        width: 100%;
+        height: auto;
+        justify-content: space-around;
+    }
+
+    .project-info {
+        text-align: left;
     }
 }
