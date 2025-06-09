@@ -150,11 +150,29 @@ window.addEventListener('load', () => {
   
   // Retrieve the last visit date from localStorage
   const lastVisit = localStorage.getItem(lastVisitKey);
+  
+  // Get the current date and time
+  const now = new Date();
+  
+  // Define the target time on the next day (e.g., 3:00 PM)
+  const targetTime = new Date(now);
+  targetTime.setDate(now.getDate() + 1); // Move to the next day
+  targetTime.setHours(15, 0, 0, 0); // Set to 3:00 PM (15:00:00)
+  
+  // Calculate the time difference in milliseconds
+  const timeDifference = targetTime - now;
+  
+  // Convert the difference to hours, minutes, and seconds
+  const hours = Math.floor(timeDifference / (1000 * 60 * 60));
 
   if (lastVisit) {
-    console.log(`Welcome back! Your last visit was on: ${new Date(lastVisit).toLocaleString()}`);
-  } else {
-    console.log('Welcome! This is your first visit.');
+    // console.log(`Welcome! Your last visit was on: ${new Date(lastVisit).toLocaleString()}`);
+    console.log(`Welcome! Let us know if you have any questions.`);
+  } else if (lastVisit == true && hours > 0 && hours < 24) {
+    console.log(`Back so soon! Awesome!`);
+  }
+  else if (lastVisit == true && hours > 24) {
+    console.log('You last visited n days ago'); //TODO: replace n with the number of days
   }
 
   // Store the current date as the last visit date
