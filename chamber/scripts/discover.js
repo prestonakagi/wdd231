@@ -142,3 +142,22 @@ buttonFour.classList.add('wayfinder');
 buttonFour.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/discover.html';
 });
+
+
+// On page load
+window.addEventListener('load', () => {
+  const lastVisitKey = 'lastVisitDate';
+  
+  // Retrieve the last visit date from localStorage
+  const lastVisit = localStorage.getItem(lastVisitKey);
+
+  if (lastVisit) {
+    console.log(`Welcome back! Your last visit was on: ${new Date(lastVisit).toLocaleString()}`);
+  } else {
+    console.log('Welcome! This is your first visit.');
+  }
+
+  // Store the current date as the last visit date
+  const currentDate = new Date().toISOString();
+  localStorage.setItem(lastVisitKey, currentDate);
+});
