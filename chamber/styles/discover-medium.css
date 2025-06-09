@@ -135,6 +135,18 @@
         padding: 10px;
     }
 
+    #sidebar{
+        background-color: white;
+        color: var(--text-color1);
+        padding: 10px;
+    }
+
+    #sidebar-content{
+        background-color: var(--primary-color);
+        color: var(--text-color1);
+        padding: 10px;
+    }
+
     footer {
         background-color: var(--primary-color);
         max-width: 100%;

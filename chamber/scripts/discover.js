@@ -164,15 +164,35 @@ window.addEventListener('load', () => {
   
   // Convert the difference to hours, minutes, and seconds
   const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24))
+
+  // Display the string in the sidebar content area
+  const sidebarContent = document.getElementById('sidebar-content');
 
   if (lastVisit) {
     // console.log(`Welcome! Your last visit was on: ${new Date(lastVisit).toLocaleString()}`);
     console.log(`Welcome! Let us know if you have any questions.`);
+    sidebarContent.textContent = `Welcome! Let us know if you have any questions.`;
   } else if (lastVisit == true && hours > 0 && hours < 24) {
     console.log(`Back so soon! Awesome!`);
+    sidebarContent.textContent = `Back so soon! Awesome!`;
   }
   else if (lastVisit == true && hours > 24) {
-    console.log('You last visited n days ago'); //TODO: replace n with the number of days
+    if(days == 1) {
+        console.log(`You last visited ${days} day ago.`);
+        sidebarContent.textContent = `You last visited ${days} day ago.`;
+    }
+    else if (days > 1) {
+    console.log(`You last visited ${days} days ago.`);
+    sidebarContent.textContent = `You last visited ${days} days ago.`;
+  }
+};
+
+  
+  if (sidebarText) {
+    sidebarContent.textContent = sidebarText;
+  } else {
+    sidebarContent.textContent = 'No content available.';
   }
 
   // Store the current date as the last visit date
