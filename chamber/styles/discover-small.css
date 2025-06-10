@@ -127,16 +127,17 @@ header {
     background-color: var(--primary-color);
 }
 
-.navigation a {
+.navigation button {
     display: block;
     padding: 1rem;
     text-decoration: none;
     text-align: center;
     background-color: var(--primary-color);
     color: black;
+    border: none;
 }
 
-.navigation a:hover {
+.navigation button:hover {
     /* different background color (and text color) or border (different colored) */
     background-color: var(--secondary-color);
     border: solid 1px white;
@@ -158,6 +159,12 @@ header {
     text-align: left;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
  /* to show members as a grid */
 .grid {
     display: flex;
@@ -166,28 +173,7 @@ header {
     gap: 20px;
     max-width: 100%;
 }
-/* to show members as a list */
-.list {
-    display: flex;
-    flex-direction: column;
-    /* gap: 20px; */
-    max-width: 100%;
-}
-/* zebra striped list display */
-.list section {
-    display: flex;
-    justify-content: space-around;
-    text-align: left;
-    background-color: beige;
-    max-width: 100%;
-    flex-wrap: wrap;
-}
-.list section:nth-child(even), .list section:nth-child(even) h2 {
-    background-color: var(--primary-color);
-}
-.list section img {
-    display: none;
-}
+
 /* cards displayed in grid area .grid section is "base" of card */
 .grid section {
     background-color: beige;
@@ -226,6 +212,21 @@ section img {
     grid-area: photograph;
     width: 100px; /*Should be about 300px wide by 200px height*/
     height: auto;
+}
+
+#interests section p {
+    text-align: left;
+}
+
+#sidebar {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    padding: 10px;
+}
+
+#sidebar-content {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
 }
 
 footer {

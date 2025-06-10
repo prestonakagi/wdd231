@@ -102,15 +102,20 @@
 
     main { /* TODO: Edit Grid! */
         display: grid;
-        grid-template-rows: 1fr 50px 50px 1fr 50px 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 50px 1fr 50px;
+        grid-template-columns: 1fr;
         gap: 10px;
         height: auto;
     }
 
+    h1 {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
     #interests {
-        grid-row: 6 / 7;
-        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
         /* max-width: 100%; */
         /* display: grid;
         grid-template-rows: 1fr 1fr 1fr;
@@ -128,33 +133,10 @@
         gap: 10px;
     }
 
-    /* to show interests as a list */
-    .list {
-        display: flex;
-        flex-direction: column;
-        /* gap: 20px; */
-    }
-
-    /* zebra striped list display */
-    .list section {
-        display: flex;
-        justify-content: space-around;
-        text-align: left;
-        background-color: beige;
-    }
-
-    .list section:nth-child(even), .list section:nth-child(even) h2 {
-        background-color: var(--primary-color);
-    }
-
-    .list section img {
-        display: none;
-    }
-
     /* cards displayed in grid area .grid section is "base" of card */
     .grid section {
         /* background-color: beige; */
-        background-color: lightcoral;
+        background-color: beige;
         display: grid;
         grid-template-areas: 
         "photograph name"
@@ -165,5 +147,17 @@
         height: auto;
         /* width: 400px; */
         padding: 10px;
+    }
+
+    #sidebar {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    padding: 10px;
+    overflow: hidden;
+    }
+
+    #sidebar-content {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
     }
 }

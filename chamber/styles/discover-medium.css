@@ -100,12 +100,10 @@
         background-color: var(--secondary-color);
     }
 
-    main { /* TODO: Edit Grid! */
-        display: grid;
-        grid-template-rows: 1fr 50px 50px 1fr 50px 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-        height: auto;
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     #interests {
@@ -122,7 +120,7 @@
     /* cards displayed in grid area .grid section is "base" of card */
     .grid section {
         /* background-color: beige; */
-        background-color: lightblue;
+        background-color: beige;
         display: grid;
         grid-template-areas: 
         "photograph name"
@@ -135,16 +133,18 @@
         padding: 10px;
     }
 
-    #sidebar{
-        background-color: white;
-        color: var(--text-color1);
+    /* hover effect */
+    #interests section img:hover {box-shadow: 0 0 50px #333;}
+
+    #sidebar {
+        background-color: var(--secondary-color);
+        color: var(--text-color2);
         padding: 10px;
     }
 
-    #sidebar-content{
-        background-color: var(--primary-color);
-        color: var(--text-color1);
-        padding: 10px;
+    #sidebar-content {
+        background-color: var(--secondary-color);
+        color: var(--text-color2);
     }
 
     footer {
