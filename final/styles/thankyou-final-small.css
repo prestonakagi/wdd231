@@ -1,0 +1,25 @@
+  *{box-sizing: border-box;}
+
+  h1 {
+  color: #3D405B;
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+  font-style: normal;
+  }
+  
+  #results {
+    background-color: lightgreen;
+    color: rgb(49, 49, 49);
+    padding: 0 1rem;
+    border: 1px solid rgb(49, 49, 49);
+    border-radius: 10px;
+  }
+
+  /* normal paragraph font */
+  p {
+      font-family: "Source Sans 3", serif; /* This font was a custom made font. */
+      font-weight: 350;
+      font-style: normal;
+      color: rgb(49, 49, 49);
+      /* padding: 10px; */
+  }
