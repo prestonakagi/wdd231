@@ -44,29 +44,36 @@
             <!-- do the 3 sizes picture element for hero image -->
             <picture class="hero">
                 <!-- widest to smallest -->
-                <source media="(min-width: 600px)" srcset="images/directory-hero-medium.webp">
-                <img src="images/directory-hero-small.webp" alt="hero image" loading="lazy">
+                <source media="(min-width: 600px)" srcset="images/hero-ultimate.webp">
+                <img src="images/hero-ultimate.webp" alt="hero image Ultimate Frisbee game" loading="lazy">
             </picture>
-            <button id="join">Register now</button>
             <h1>Home</h1>
             <h2 class="h-cevents">Intro to Ultimate Frisbee</h2>
             <section class="cevents">
-                <ol>
-                    <li>5/27/25 7:00 pm Chamber Meeting</li>
-                    <li>5/28/25 7:00 pm Local Businesses Meet and Greet</li>
-                    <li>6/4/25 10:00 am Weekly Podcast Launches</li>
-                </ol>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, unde? Porro, numquam rerum tempora tenetur, mollitia minima inventore harum eaque consequuntur itaque eos quisquam perferendis.
+                </p>
+                <img src="images/frisbee.webp" alt="frisbee" loading="lazy">
             </section>
             <h2 class="h-current">Ultimate Frisbee Association (UFA)</h2>
             <!-- <section></section> but might be span class="current"-->
             <section class="current">
-                <span id="current"></span>
-                <!-- <img id="weather-icon" src="" alt="" loading="lazy"> -->
-                <span id="weather-icon"></span>
+                <span id="current"></span> <!--TODO: maybe use JSON of array of strings of rules-->
+                <a href="https://watchufa.com" target="_blank">UFA Website</a>
             </section>
             <h2 class="h-forecast">Questions</h2>
-            <form>
-
+                <form class="form" method="get" id="form">
+                   <h2>Have Questions?</h2>
+                   <label class="top-label" for="user-name">Name</label>
+                   <input type="text" id="user-name" name="user-name" required>
+                   <label class="top-label" for="user-email">Email</label>
+                   <input type="email" id="user-email" name="user-email" required>
+                   <label for="phone">Phone xxx-xxx-xxxx (Optional)</label>
+                   <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                   <label class="top-label" for="questions">Questions about bioinformatics and/or careers in bioinformatics</label>
+                   <textarea id="questions" name="questions" rows="10" required></textarea>
+                   <input type="submit" id="submit" value="Send Questions">
+                   <!-- <button type="submit" id="submit">Send Questions</button> -->
             </form>
         </main>
         <footer>

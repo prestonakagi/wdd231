@@ -99,13 +99,6 @@ const displayCards = (companies) => {
 }
 
 
-// join button on click to go to Join page
-
-document.getElementById('join').addEventListener('click', function() {
-    window.location.href = 'https://prestonakagi.github.io/wdd231/chamber/join.html'; // directory page to test. And it worked!
-  });
-
-
   // top navigation buttons on click to go to respective link AND put wayfinder.
 
 const buttonOne = document.getElementById("button1");
