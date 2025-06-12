@@ -289,6 +289,58 @@ section img {
     height: auto;
 }
 
+.form {
+    background-color: antiquewhite;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    max-width: 425px;
+}
+
+.form h2 {
+    color: var(--text-color1);
+    /* text-decoration: underline; */
+    text-align: center;
+}
+
+label {
+    padding-top: 1rem;
+}
+
+.top-label {
+    padding-bottom: 0.25rem;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="tel"],
+.form textarea {
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 6px;
+    padding: 1rem;
+    color: gray;
+    width: 100%;
+    max-width: 400px;
+}
+
+.form input[type="submit"] {
+    background-color: var(--secondary-color);
+    color: var(--text-color2);
+    border: none;
+    border-radius: 6px;
+    padding: 1rem;
+    width: 99%;
+    max-width: 400px;
+    margin: 1rem 1% 2rem 0;
+}
+
+.form input[type="submit"]:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color1);
+}
+
 footer {
     background-color: var(--primary-color);
     max-width: 100%;
@@ -299,9 +351,7 @@ footer {
     flex-direction: column;
     justify-content: space-around;
 }
-#address-contact {
-    text-align: left;
-}
+
 .sociallinks {
     /* background-color: var(--accent1-color); */
     /* height: 50px; */
@@ -309,13 +359,15 @@ footer {
     display: flex;
     /* column-gap: 10px; */
     justify-content: end;
-    align-self: center;
+    align-self: flex-start;
+    padding: 7px;
 }
 .sociallinks a {
     text-decoration: none; /* removes default style of underlines under hyperlinks */
     width: 40px;
     justify-self: end;
     align-content: center;
+    padding: 2px;
 }
 .sociallinks a img {
     width: 100%;
@@ -323,5 +375,13 @@ footer {
     justify-content: space-around;
 }
 .project-info {
+    /* display: flex;
+    flex-direction: column; without flex has less space between lines which is good*/
+
     text-align: left;
+}
+
+.link4 {
+    text-align: left;
+    padding-left: 7px;
 }
