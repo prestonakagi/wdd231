@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Index Ultimate Frisbee</title>
-        <meta name="description" content="Ultimate Frisbee Project Index Page">
+        <title>Rules of Ultimate Frisbee</title>
+        <meta name="description" content="Ultimate Frisbee Project Rules Page">
         <meta name="author" content="Preston Akagi">
         <!-- Open Graph meta properties -->
         <meta property="og:title" content="Ultimate Frisbee Project Index Page PA">
@@ -20,10 +20,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@350&display=swap" rel="stylesheet">
         <!--Google Fonts links end-->
-        <link rel="stylesheet" href="styles/index-final-small.css">
-        <link rel="stylesheet" href="styles/index-final-large.css">
+        <link rel="stylesheet" href="styles/rules-final-small.css">
+        <link rel="stylesheet" href="styles/rules-final-large.css">
         <!-- TODO: delete defer after make module js's. Also maybe need to move script element to end of body. -->
-        <script src="scripts/index-final.js" defer></script>
+        <script src="scripts/rules-final.js" defer></script>
     </head>
     <body>
         <header>
@@ -41,40 +41,8 @@
             </nav>
         </header>
         <main>
-            <!-- do the 3 sizes picture element for hero image -->
-            <picture class="hero">
-                <!-- widest to smallest -->
-                <source media="(min-width: 600px)" srcset="images/hero-ultimate.webp">
-                <img src="images/hero-ultimate.webp" alt="hero image Ultimate Frisbee game" loading="lazy">
-            </picture>
-            <h1>Home</h1>
-            <h2 class="h-cevents">Intro to Ultimate Frisbee</h2>
-            <section class="cevents">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, unde? Porro, numquam rerum tempora tenetur, mollitia minima inventore harum eaque consequuntur itaque eos quisquam perferendis.
-                </p>
-                <img src="images/frisbee.webp" alt="frisbee" loading="lazy">
-            </section>
-            <h2 class="h-current">Ultimate Frisbee Association (UFA)</h2>
-            <!-- <section></section> but might be span class="current"-->
-            <section class="current">
-                <span id="current"></span> <!--TODO: maybe use JSON of array of strings of rules-->
-                <a href="https://watchufa.com" target="_blank">UFA Website</a>
-            </section>
-            <!-- See Join HTML!! 231 Advanced forms in Week 4 -->
-            <form class="form" method="get" id="form">
-               <h2>Have Questions?</h2>
-               <label class="top-label" for="user-name">Name</label>
-               <input type="text" id="user-name" name="user-name" required>
-               <label class="top-label" for="user-email">Email</label>
-               <input type="email" id="user-email" name="user-email" required>
-               <label for="phone">Phone xxx-xxx-xxxx (Optional)</label>
-               <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-               <label class="top-label" for="questions">Questions about bioinformatics and/or careers in bioinformatics</label>
-               <textarea id="questions" name="questions" rows="10" required></textarea>
-               <input type="submit" id="submit" value="Send Questions">
-               <!-- <button type="submit" id="submit">Send Questions</button> -->
-            </form>
+            <h1>How to Play</h1>
+
         </main>
         <footer>
             <div class="sociallinks">

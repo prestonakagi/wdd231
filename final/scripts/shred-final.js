@@ -41,7 +41,6 @@ hamButton.addEventListener('click', () => {
 // top navigation buttons on click to go to respective link AND put wayfinder.
 
 const buttonOne = document.getElementById("button1");
-buttonOne.classList.add('wayfinder');
 
 buttonOne.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/final';
@@ -54,6 +53,7 @@ buttonTwo.addEventListener('click', function() {
 });
 
 const buttonThree = document.getElementById("button3");
+buttonThree.classList.add('wayfinder');
 
 buttonThree.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/final/shred.html';
@@ -62,3 +62,4 @@ buttonThree.addEventListener('click', function() {
 
 // Below is for this page's modules' code
 
+// in module, make a h2 element of 'Current Season Record'. Then h2 element 'Upcoming games', h3 elements 'Home' and 'Away'.

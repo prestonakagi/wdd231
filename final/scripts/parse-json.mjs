@@ -1,7 +1,7 @@
 // https://github.com/prestonakagi/wdd231/blob/main/final/data/ultimate-rules.json
 const urlRules = 'https://github.com/prestonakagi/wdd231/blob/main/final/data/ultimate-rules.json';
 
-async function apiFetchRules() {
+export async function apiFetchRules() {
     try {
         const response = await fetch(urlRules);
         if (response.ok) {

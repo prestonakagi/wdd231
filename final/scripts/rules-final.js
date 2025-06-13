@@ -41,13 +41,13 @@ hamButton.addEventListener('click', () => {
 // top navigation buttons on click to go to respective link AND put wayfinder.
 
 const buttonOne = document.getElementById("button1");
-buttonOne.classList.add('wayfinder');
 
 buttonOne.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/final';
 });
 
 const buttonTwo = document.getElementById("button2");
+buttonTwo.classList.add('wayfinder');
 
 buttonTwo.addEventListener('click', function() {
     window.location.href = 'https://prestonakagi.github.io/wdd231/final/rules.html';
