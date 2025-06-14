@@ -158,7 +158,33 @@ header {
     text-align: left;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+}
 
+#field-button {
+
+}
+
+#field-modal {
+    width: 100%;
+    /* height: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#field-modal h2 {
+    background-color: white;
+    color: var(--text-color1);
+}
+
+#field-modal img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}
 
 footer {
     background-color: var(--primary-color);

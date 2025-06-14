@@ -1,5 +1,9 @@
-// import {apiFetchRules} from '../data/parse-json.mjs'
+import {apiFetchRules} from './parse-json.mjs';
+// for JSON on Github, need to use raw URL!
 // console.log(places);
+
+import {displayField} from './modal.mjs';
+
 
 // footer year and datetime last modified
 
@@ -62,3 +66,15 @@ buttonThree.addEventListener('click', function() {
 
 // Below is for this page's modules' code
 
+const rulesList = document.getElementById('rules-list');
+
+apiFetchRules(rulesList);
+
+// modal for field of play
+
+const fieldButton = document.getElementById('field-button');
+const fieldModal = document.getElementById('field-modal');
+
+fieldButton.addEventListener("click", () => {
+    displayField(fieldModal, "images/field-diagram.svg"); //TODO: make sure that is the image file name.
+});

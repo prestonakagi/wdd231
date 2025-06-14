@@ -1,13 +1,14 @@
-// https://github.com/prestonakagi/wdd231/blob/main/final/data/ultimate-rules.json
-const urlRules = 'https://github.com/prestonakagi/wdd231/blob/main/final/data/ultimate-rules.json';
+// for JSON on Github, need to use raw URL!
+// https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/final/data/ultimate-rules.json
+const urlRules = 'https://raw.githubusercontent.com/prestonakagi/wdd231/refs/heads/main/final/data/ultimate-rules.json';
 
-export async function apiFetchRules() {
+export async function apiFetchRules(whereAdd) {
     try {
         const response = await fetch(urlRules);
         if (response.ok) {
             const data = await response.json();
             console.log(data); // testing only
-            //displayRules(data); // uncomment when ready (this is from the learning activity)
+            displayRules(data, whereAdd); // uncomment when ready (this is from the learning activity)
         } else {
             throw Error(await response.text());
         }
@@ -18,12 +19,13 @@ export async function apiFetchRules() {
 
 apiFetchRules();
 
-function displayRules(data) {
-    const rulesList = document.createElement("ol");
+const displayRules = (data, whereAdd) => {
+    const olRulesList = document.createElement("ol");
     // Access the array and use forEach
-    data.rules.forEach(rule => {
+    data.rules.forEach((rule) => {
         let point = document.createElement("li");
-        point.innerText = `${rule}`;
-        rulesList.appendChild(point);
+        point.textContent = `${rule}`;
+        olRulesList.appendChild(point);
+        whereAdd.appendChild(olRulesList);
     });
 }

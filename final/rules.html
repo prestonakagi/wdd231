@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="styles/rules-final-small.css">
         <link rel="stylesheet" href="styles/rules-final-large.css">
         <!-- TODO: delete defer after make module js's. Also maybe need to move script element to end of body. -->
-        <script src="scripts/rules-final.js" defer></script>
+        <script src="scripts/rules-final.js" type="module"></script>
     </head>
     <body>
         <header>
@@ -42,7 +42,9 @@
         </header>
         <main>
             <h1>How to Play</h1>
-
+            <span id="rules-list"></span>
+            <button type="button" id="field-button">Field of Play</button>
+            <dialog id="field-modal"></dialog>
         </main>
         <footer>
             <div class="sociallinks">
@@ -64,5 +66,6 @@
             </div>
             <a class="link4" target="_blank" href="https://prestonakagi.github.io/wdd131/project/sources.html">Sources</a> <!--TODO: update url and make CSS-->
         </footer>
+        <script src="scripts/rules-final.js" type="module"></script>
     </body>
 </html>

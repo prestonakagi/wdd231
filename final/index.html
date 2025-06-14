@@ -48,32 +48,33 @@
                 <img src="images/hero-ultimate.webp" alt="hero image Ultimate Frisbee game" loading="lazy">
             </picture>
             <h1>Home</h1>
-            <h2 class="h-cevents">Intro to Ultimate Frisbee</h2>
-            <section class="cevents">
+            <h2 class="h-intro">Intro to Ultimate Frisbee</h2>
+            <section class="intro">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, unde? Porro, numquam rerum tempora tenetur, mollitia minima inventore harum eaque consequuntur itaque eos quisquam perferendis.
                 </p>
                 <img src="images/frisbee.webp" alt="frisbee" loading="lazy">
             </section>
-            <h2 class="h-current">Ultimate Frisbee Association (UFA)</h2>
-            <!-- <section></section> but might be span class="current"-->
-            <section class="current">
-                <span id="current"></span> <!--TODO: maybe use JSON of array of strings of rules-->
-                <a href="https://watchufa.com" target="_blank">UFA Website</a>
+            <h2 class="h-ufa">Ultimate Frisbee Association (UFA)</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro quod voluptatum consequuntur ipsam quis architecto debitis vitae, a nemo quas perspiciatis quo quae eius necessitatibus dolor molestias in similique provident.</p>
+            <section class="ufa">
+                <span id="ufa"></span> <!--TODO: maybe use JSON of array of strings of rules-->
+                <a id="ufa-link" href="https://watchufa.com" target="_blank">UFA Website</a>
             </section>
             <!-- See Join HTML!! 231 Advanced forms in Week 4 -->
             <form class="form" method="get" id="form">
                <h2>Have Questions?</h2>
-               <label class="top-label" for="user-name">Name</label>
-               <input type="text" id="user-name" name="user-name" required>
+               <label class="top-label" for="user-name" >Name</label>
+               <input type="text" id="user-name" name="user-name" title="Enter your name here." autocomplete="on" required>
                <label class="top-label" for="user-email">Email</label>
-               <input type="email" id="user-email" name="user-email" required>
-               <label for="phone">Phone xxx-xxx-xxxx (Optional)</label>
-               <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-               <label class="top-label" for="questions">Questions about bioinformatics and/or careers in bioinformatics</label>
-               <textarea id="questions" name="questions" rows="10" required></textarea>
+               <input type="email" id="user-email" name="user-email" title="Enter your email here." autocomplete="on" placeholder="example@exampledomain.com" required>
+               <label for="phone">Phone xxx-xxx-xxxx</label>
+               <input type="tel" id="phone" name="phone" title="Enter your mobile phone number here." autocomplete="on" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+               <label class="top-label" for="questions">Questions about Ultimate Frisbee</label>
+               <textarea id="questions" name="questions" rows="10" title="Write your questions about Ultimate Frisbee here." required></textarea>
+               <!-- timestamp, hidden type, current date and time form loaded by user -->
+               <input type="hidden" name="timestamp" id="timestamp">
                <input type="submit" id="submit" value="Send Questions">
-               <!-- <button type="submit" id="submit">Send Questions</button> -->
             </form>
         </main>
         <footer>
