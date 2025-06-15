@@ -167,12 +167,16 @@ main {
 
 }
 
-#field-modal {
+#field-modal.active { /* after click on modal button, .active added */
     width: 100%;
     /* height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+#field-modal.inactive {
+    display: none;
 }
 
 #field-modal h2 {
