@@ -104,26 +104,28 @@
         justify-self: center;
     }
 
-    .hero img {
+    /* .hero img {
         position: relative;
-    }
+    } */
 
     h1 {
         grid-row: 2 / 3;
         grid-column: 1 / 4;
     }
 
-    .h-cevents {
+    .h-intro {
         grid-row: 3 / 4;
         grid-column: 1 / 2;
         text-align: center;
         /* TODO: how align text vertically centered? */
     }
 
-    .cevents {
+    .intro {
         grid-row: 4 / 5;
         grid-column: 1 / 2;
         /* background-color: beige; */
+        display: flex;
+        flex-direction: column;
     }
 
     .h-ufa {
@@ -135,9 +137,8 @@
         grid-row: 4 / 5;
         grid-column: 2 / 3;
         background-color: tan;
-        display: grid;
-        grid-template-rows: 1fr;
-        grid-template-columns: 1fr 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
     #ufa {

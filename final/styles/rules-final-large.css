@@ -87,11 +87,8 @@
     }
 
     main {
-        display: grid;
-        grid-template-rows: 1fr 50px 50px 1fr 50px 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 10px;
-        height: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     h1 {
@@ -99,12 +96,16 @@
         grid-column: 1 / 4;
     }
 
-    #field-modal {
+    #field-modal.active {
         width: 80%;
         /* height: auto; */
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    #field-modal.inactive {
+        display: none;
     }
 
     #field-modal img {

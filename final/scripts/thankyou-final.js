@@ -17,8 +17,9 @@ const formattedDate = dateObj.toLocaleString('en-US', options);
 
 
 document.querySelector('#results').innerHTML = `
-<p>${formattedDate}</p>
+<!--<p>${formattedDate}</p> saying "Invalid Date"-->
 <p>Thank you, ${myInfo.get('user-name')}, for sending your questions about Ultimate Frisbee!</p>
+<p>We will respond with answers as soon as possible.</p>
 <p>Your phone number is ${myInfo.get('phone')}.</p>
 <p>Your email is ${myInfo.get('user-email')}.</p>
 <p>The questions you sent are the following:<br>${myInfo.get('questions')}</p>`
