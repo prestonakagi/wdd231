@@ -1,4 +1,4 @@
-// import {apiFetchRules} from '../data/parse-json.mjs'
+import {apiFetch} from './forecast.mjs'
 // console.log(places);
 
 // footer year and datetime last modified
@@ -62,4 +62,4 @@ buttonThree.addEventListener('click', function() {
 
 // Below is for this page's modules' code
 
-// in module, make a h2 element of 'Current Season Record'. Then h2 element 'Upcoming games', h3 elements 'Home' and 'Away'.
+apiFetch();

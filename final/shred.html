@@ -22,8 +22,6 @@
         <!--Google Fonts links end-->
         <link rel="stylesheet" href="styles/shred-final-small.css">
         <link rel="stylesheet" href="styles/shred-final-large.css">
-        <!-- TODO: delete defer after make module js's. Also maybe need to move script element to end of body. -->
-        <script src="scripts/shred-final.js" defer></script>
     </head>
     <body>
         <header>
@@ -47,14 +45,13 @@
             </p>
             <!-- Current Season Record (API?) -->
             <!-- Upcoming games: section with h2, h3, ol li, h3, ol li -->
-            <h2 id="rec-head">Current Season Record</h2>
-            <p id="record">Filler Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis et mollitia ipsum animi molestias quisquam, magni accusamus, quidem consequuntur saepe nisi provident repellat maiores architecto.</p>
-            <h2 class="h-games">Upcoming Games dates, time, locations</h2>
-            <section class="games-section">
-                <span id="games"></span>
-            </section>
+            <h2 id="rec-head">Current Season Record (up to 6/15/25)</h2>
+            <img id="record" src="images/shred-record-06152025-zoomed.webp" alt="Shred's record in 2025 up to June 15th" loading="lazy">
+            <h2 class="h-games">All Shred Games 2025 Season</h2>
+            <img class="games" src="images/shred-games.webp" alt="Shred's games in 2025" loading="lazy">
             <h2 class="h-forecast">Weather Current and 4-Day Forecast in SLC</h2>
             <span class="forecast"></span>
+            <span id="weather-icon"></span>
             <!-- <span id="weather-icon"></span> just for current or most upcoming item -->
         </main>
         <footer>
@@ -77,5 +74,6 @@
             </div>
             <a class="link4" target="_blank" href="https://prestonakagi.github.io/wdd131/project/sources.html">Sources</a> <!--TODO: update url and make CSS-->
         </footer>
+        <script src="scripts/shred-final.js" type="module"></script>
     </body>
 </html>
