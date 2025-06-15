@@ -23,3 +23,14 @@ document.querySelector('#results').innerHTML = `
 <p>Your phone number is ${myInfo.get('phone')}.</p>
 <p>Your email is ${myInfo.get('user-email')}.</p>
 <p>The questions you sent are the following:<br>${myInfo.get('questions')}</p>`
+
+// store values to localStorage
+
+// Get form values
+// const name = document.getElementById('name').value;
+// const email = document.getElementById('email').value;
+// Save to localStorage
+localStorage.setItem('name', myInfo.get('user-name'));
+localStorage.setItem('phone', myInfo.get('phone'));
+localStorage.setItem('email', myInfo.get('user-email'));
+localStorage.setItem('questions', myInfo.get('questions'));
