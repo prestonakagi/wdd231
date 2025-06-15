@@ -88,18 +88,48 @@
 
     main {
         display: grid;
-        grid-template-rows: 1fr 50px 50px 1fr 50px 1fr;
+        grid-template-rows: 50px 70px 1fr 50px 1fr;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "heading heading heading"
+          "intro recordhead2 headw"
+          "intro record weather"
+          "intro gameshead2 weather"
+          "intro games weather";
         gap: 10px;
-        height: auto;
     }
 
     h1 {
-        grid-row: 2 / 3;
-        grid-column: 1 / 4;
+        grid-area: heading;
     }
 
+    #intro-shred {
+        grid-area: intro;
+    }
 
+    #rec-head {
+        grid-area: recordhead2;
+    }
+
+    #record {
+        grid-area: record;
+    }
+
+    .h-games{
+        grid-area: gameshead2;
+    }
+
+    .games-section{
+        grid-area: games;
+    }
+
+    .h-forecast {
+        grid-area: headw;
+    }
+
+    .forecast{
+        grid-area: weather;
+    }
 
     footer {
         background-color: var(--primary-color);
