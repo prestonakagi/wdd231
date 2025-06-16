@@ -88,14 +88,14 @@
 
     main {
         display: grid;
-        grid-template-rows: 50px 70px 1fr 50px 1fr;
+        grid-template-rows: 50px 70px 205px 50px 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
           "heading heading heading"
-          "intro recordhead2 headw"
-          "intro record weather"
-          "intro gameshead2 weather"
-          "intro games weather";
+          "intro gameshead2 headw"
+          "intro games weather"
+          "recordhead2 games weather"
+          "record games weather";
         gap: 10px;
     }
 
@@ -130,6 +130,10 @@
     .forecast{
         grid-area: weather;
     }
+
+    /* .card-weather {
+        background-color: var(--primary-color);
+    } */
 
     footer {
         background-color: var(--primary-color);

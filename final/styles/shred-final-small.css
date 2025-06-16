@@ -158,7 +158,17 @@ header {
     text-align: left;
 }
 
+.forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.card-weather {
+    background-color: beige;
+    border: 1px solid var(--text-color1);
+    padding: 10px;
+}
 
 footer {
     background-color: var(--primary-color);
