@@ -172,6 +172,11 @@ main {
     border-radius: var(--rounded-corners);
 }
 
+#field-button:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color1);
+}
+
 #field-modal.active { /* after click on modal button, .active added */
     width: 100%;
     /* height: auto; */
