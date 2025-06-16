@@ -193,7 +193,7 @@ section img {
 }
 
 .form h2 {
-    color: var(--text-color1);
+    color: var(--text-color2);
     /* text-decoration: underline; */
     text-align: center;
 }
