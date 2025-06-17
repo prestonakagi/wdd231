@@ -88,7 +88,7 @@
 
     main {
         display: grid;
-        grid-template-rows: 50px 70px 205px 50px 1fr;
+        grid-template-rows: 50px 70px 205px 80px 1fr;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas:
           "heading heading heading"
