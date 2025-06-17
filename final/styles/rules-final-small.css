@@ -59,7 +59,7 @@ h2 {
 }
 
 /* normal paragraph font */
-p, li, .link4 {
+p, li, .link4, #video {
     font-family: "Source Sans 3", serif; /* This font was a custom made font. */
     font-weight: 350;
     font-style: normal;
@@ -240,7 +240,7 @@ footer {
     text-align: left;
 }
 
-.link4 {
+.link4, #video {
     text-align: left;
     padding-left: 7px;
 }

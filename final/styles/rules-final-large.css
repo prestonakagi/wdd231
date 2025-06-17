@@ -126,15 +126,21 @@
         flex-direction: row;
         justify-content: space-around; */
         display: grid;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 0.5fr 0.5fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
 
     }
 
     .link4 {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    justify-self: right;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        justify-self: right;
+    }
+
+    #video {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+        justify-self: right;
     }
 
     .sociallinks {
@@ -164,7 +170,7 @@
 
     .project-info {
         text-align: left;
-        grid-row: 1 / 3;
+        grid-row: 1 / 4;
         grid-column: 3 / 4;
     }
 }
