@@ -62,8 +62,8 @@ export function displayForecast(data) {
 
     spanForecast.appendChild(cardWeather);
 
-    // three more days
-    const threeDays = [8, 16, 24];
+    // three times for day 1 and 3 more days
+    const threeDays = [1, 2, 3, 8, 9, 10, 11, 16, 17, 18, 19, 24, 25, 26, 27];
 
     threeDays.forEach((num) => {
         let dateTimeString = data.list[num].dt_txt; //"yyyy-mm-dd hh:mm:ss"
